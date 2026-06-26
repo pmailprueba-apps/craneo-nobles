@@ -2,7 +2,7 @@ name: Publicar Hera - Cráneo Noble
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # 12:00 PM todos los días (hora CDMX = UTC-6 = 18:00 UTC)
+    - cron: '0 18 * * *'   # 12:00 PM hora CDMX
   workflow_dispatch:        # También se puede ejecutar manualmente
 
 jobs:
@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout repositorio
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_TOKEN }}
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
