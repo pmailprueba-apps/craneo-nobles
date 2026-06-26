@@ -68,10 +68,12 @@ s['currentDay'] += 1
 with open('.campana-state.json', 'w') as f:
     json.dump(s, f, indent=2)
 "
-    # Telegram notify (opcional)
-    curl -s "https://api.telegram.org/bot8706527433:AAG4-93gmyT-hhQ6qAQj5uNWI1R2FBbqWzI/sendMessage" \
-        -d "chat_id=1457782554" \
-        -d "text=✅ Cráneo Noble: Día $DIA publicado ($FB_ID)" > /dev/null 2>&1
+    # Telegram notify via secret (si está configurado en GitHub Actions)
+    if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+        curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "text=✅ Cráneo Noble: Día $DIA publicado ($FB_ID)" > /dev/null 2>&1
+    fi
 else
     echo "[$(date)] ❌ Error: $RESULT" >> "$LOG"
 fi
