@@ -2,102 +2,85 @@ name: Publicar Hera - Cráneo Noble
 
 on:
   schedule:
-    - cron: '0 18 * * *'   # 12:00 PM hora CDMX
-  workflow_dispatch:        # También se puede ejecutar manualmente
+    - cron: '0 18 * * *'
+  workflow_dispatch:
 
 jobs:
   publicar:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repositorio
-        uses: actions/checkout@v4
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - uses: actions/checkout@v4
 
       - name: Leer estado de campaña
         id: estado
         run: |
-          echo "day=$(cat .campana-state.json | python3 -c 'import sys,json; print(json.load(sys.stdin)[\"currentDay\"])')" >> $GITHUB_OUTPUT
-          echo "max=8" >> $GITHUB_OUTPUT
+          echo "day=$(python3 -c 'import json; print(json.load(open(\".campana-state.json\"))[\"currentDay\"])')" >> $GITHUB_OUTPUT
 
       - name: Publicar en Facebook
-        if: steps.estado.outputs.day < steps.estado.outputs.max
+        if: steps.estado.outputs.day < 8
         env:
           PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           PAGE_ID: "1237040242820189"
           DAY: ${{ steps.estado.outputs.day }}
         run: |
           DAY_DIR="contenido/dia${DAY}"
-          IMAGE=$(ls "$DAY_DIR" | grep -iE '\.(png|jpg|jpeg|webp)$' | head -1)
+          IMAGE=$(ls "$DAY_DIR" 2>/dev/null | grep -iE '\.(png|jpg|jpeg|webp)$' | head -1)
           
-          # Extraer copy del archivo de campaña
-          COPY=$(python3 << 'PYEOF'
+          python3 -c "
 import re, sys
-with open('marketing/campana-hera.md', 'r') as f:
+day = int('${DAY}')
+with open('marketing/campana-hera.md') as f:
     content = f.read()
-day = int(sys.argv[1]) if len(sys.argv) > 1 else 1
-marker = f"### Día {day} —"
+marker = f'### Día {day} —'
 start = content.find(marker)
-if start == -1: sys.exit(0)
+if start == -1: sys.exit(1)
 section = content[start:]
 end = section.find('### Día ', 10)
 text = section[:end] if end != -1 else section
-match = re.search(r'\*\*Copy:\*\*\n([\s\S]*?)(?=\n#|$)', text)
+match = re.search(r'\*\*Copy:\*\*\n([\s\S]*?)(?=\n#|\$)', text)
 if match:
-    print(match.group(1).strip())
+    with open('_copy.txt', 'w') as out:
+        out.write(match.group(1).strip())
 else:
-    print("")
-PYEOF
-          )
+    sys.exit(1)
+"
           
-          echo "Día: $DAY"
-          echo "Imagen: $IMAGE"
-          echo "Copy: ${COPY:0:50}..."
+          echo "Día: ${DAY}"
+          echo "Imagen: ${IMAGE}"
           
-          if [ -n "$IMAGE" ]; then
-            # Publicar con imagen
+          if [ -n "$IMAGE" ] && [ -f "${DAY_DIR}/${IMAGE}" ]; then
             curl -s -X POST "https://graph.facebook.com/v19.0/${PAGE_ID}/photos" \
-              -F "message=${COPY}" \
+              -F "message=$(cat _copy.txt)" \
               -F "access_token=${PAGE_TOKEN}" \
               -F "source=@${DAY_DIR}/${IMAGE}" > fb_result.json
           else
-            # Publicar solo texto
             curl -s -X POST "https://graph.facebook.com/v19.0/${PAGE_ID}/feed" \
-              -d "message=${COPY}" \
+              -d "message=$(cat _copy.txt)" \
               -d "access_token=${PAGE_TOKEN}" > fb_result.json
           fi
           
-          # Verificar resultado
           cat fb_result.json
-          FB_ID=$(python3 -c "import sys,json; print(json.load(open('fb_result.json')).get('id','ERROR'))" 2>/dev/null)
-          echo "FB_POST_ID=$FB_ID" >> $GITHUB_ENV
+          python3 -c "import json; d=json.load(open('fb_result.json')); print('✅ OK' if 'id' in d else '❌ ' + d.get('error',{}).get('message',''))"
 
-      - name: Actualizar estado de campaña
-        if: steps.estado.outputs.day < steps.estado.outputs.max
+      - name: Actualizar estado
+        if: steps.estado.outputs.day < 8
         run: |
-          python3 << 'PYEOF'
+          python3 -c "
 import json
 with open('.campana-state.json') as f:
-    state = json.load(f)
-state['publishedDays'].append(state['currentDay'])
-state['currentDay'] += 1
+    s = json.load(f)
+s['publishedDays'].append(s['currentDay'])
+s['currentDay'] += 1
 with open('.campana-state.json', 'w') as f:
-    json.dump(state, f, indent=2)
-print(f"Día actualizado a {state['currentDay']}")
-PYEOF
-
-      - name: Commit y push del estado
-        if: steps.estado.outputs.day < steps.estado.outputs.max
-        run: |
+    json.dump(s, f, indent=2)
+print(f'Día actualizado a {s[\"currentDay\"]}')
+"
           git config user.name "Cráneo Noble Bot"
           git config user.email "bot@craneonoble.com"
           git add .campana-state.json
-          git commit -m "📅 Campaña Hera: día ${{ steps.estado.outputs.day }} publicado"
+          git diff --cached --quiet || git commit -m "📅 Campaña Hera: día ${{ steps.estado.outputs.day }} publicado"
           git push
 
       - name: Campaña completada
-        if: steps.estado.outputs.day >= steps.estado.outputs.max
-        run: echo "✅ Campaña completada — todas las publicaciones realizadas"
+        if: steps.estado.outputs.day >= 8
+        run: echo "✅ Campaña completada"
