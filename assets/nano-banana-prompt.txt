@@ -1,0 +1,16 @@
+========================================================================
+🚀 NANO BANANA PRO / GEMINI - IMAGE GENERATION PROMPTS FOR CRÁNEO NOBLE
+========================================================================
+
+Este archivo contiene los prompts optimizados para generar variaciones realistas
+y mockups de lujo del logotipo en Google Gemini / Imagen 3 (Nano Banana Pro).
+
+------------------------------------------------------------------------
+🇺🇸 ENGLISH VERSION (Recomendado para máxima precisión en Imagen 3)
+------------------------------------------------------------------------
+"A luxury close-up product photograph of a modern cow skull emblem engraved onto a dark, warm brushed bronze metal plate. The cow skull features intricate, elegant filigree cutouts and an artistic monogram embedded in the forehead. The engraving is filled with polished, reflective warm gold. The background is a dark, textured metallic surface with a dramatic spotlight centering on the emblem. Below the skull, the words 'CRÁNEO NOBLE' are elegantly embossed in a classic serif font with wide letter-spacing. Highly detailed, cinematic studio lighting, premium brand identity, 8k resolution, photorealistic."
+
+------------------------------------------------------------------------
+🇪🇸 SPANISH VERSION (Optimizado para Gemini en español)
+------------------------------------------------------------------------
+"Fotografía de producto de lujo en primer plano de un emblema moderno de cráneo de toro grabado en una placa de metal de bronce cepillado oscuro y cálido. El cráneo presenta intrincados y elegantes recortes de filigrana y un monograma artístico incrustado en la frente. El grabado está relleno de oro cálido pulido y reflectante. El fondo es una superficie metálica oscura y texturizada con un haz de luz dramático centrado en el emblema. Debajo del cráneo, las palabras 'CRÁNEO NOBLE' están grabadas con elegancia en una tipografía serif clásica con amplio espaciado entre letras. Iluminación de estudio cinematográfica altamente detallada, identidad de marca premium, resolución 8k, fotorrealista."

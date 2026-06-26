@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hera — Cráneo Noble | Patricia Torrez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c;
+      --surface: #141414;
+      --border: #1f1f1f;
+      --text: #e8e6e3;
+      --text-muted: #8a8885;
+      --accent: #c9a96e;
+      --accent-dim: #a6894e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      mix-blend-mode: difference;
+    }
+    nav .logo {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    nav .logo span { color: var(--accent); }
+    nav a {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 1; }
+
+    /* Hero */
+    .hero {
+      min-height: 100dvh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      position: relative;
+    }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .hero-image .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 64px 64px;
+    }
+    .hero-content .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 6vw, 88px);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .hero-content h1 span {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: clamp(16px, 2vw, 24px);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+    .hero-content .subtitle {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 420px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    .hero-content .ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-primary:hover {
+      background: var(--accent-dim);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active {
+      transform: scale(0.97);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-secondary:hover {
+      border-color: var(--text-muted);
+      background: rgba(255,255,255,0.03);
+    }
+    .btn-secondary:active {
+      transform: scale(0.97);
+    }
+
+    /* Details section */
+    .details {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+    @media (max-width: 768px) {
+      .details-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .details h2 {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .details p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+    .details p strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+    .specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .spec-item label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 300;
+    }
+    .spec-item span {
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    /* Philosophy */
+    .philosophy {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .philosophy h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 40px;
+      line-height: 1.1;
+    }
+    .philosophy .values {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .philosophy .values .value {
+      text-align: center;
+    }
+    .philosophy .values .value .num {
+      font-size: 32px;
+      color: var(--accent);
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+    .philosophy .values .value .label {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+      font-weight: 300;
+    }
+
+    /* Contact / CTA */
+    .contact {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .contact p {
+      font-size: 20px;
+      color: var(--text);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+    .contact .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 48px;
+      background: #25D366;
+      color: #000;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 0;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .contact .whatsapp-btn:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+    }
+    .contact .whatsapp-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--text); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-image {
+        min-height: 40vh;
+        order: -1;
+      }
+      .hero-content {
+        padding: 40px 24px 64px;
+      }
+      .container { padding: 0 24px; }
+      .specs { grid-template-columns: 1fr; }
+      nav { padding: 16px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Cráneo <span>Noble</span></div>
+    <a href="https://wa.me/5214445101553?text=Hola%20quiero%20informes%20sobre%20Hera" target="_blank">WhatsApp</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-image">
+      <img src="../assets/IMG_1810.PNG" alt="Hera — Cráneo Noble de Patricia Torrez" class="hero-img">
+    </div>
+    <div class="hero-content">
+      <div class="eyebrow">Colección Cráneo Noble</div>
+      <h1>
+        Hera
+        <span>Arte · Raíz · Carácter · Trascendencia</span>
+      </h1>
+      <p class="subtitle">
+        Pieza única intervenida a mano por la artista y diseñadora Patricia Torrez. 
+        Un cráneo natural transformado en obra de arte — irrepetible, como la huella que lo inspiró.
+      </p>
+      <div class="ctas">
+        <a href="https://wa.me/5214445101553?text=Hola%20me%20interesa%20Hera" class="btn-primary" target="_blank">Adquirir</a>
+        <a href="#details" class="btn-secondary">Conocer más</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="details" id="details">
+    <div class="container">
+      <div class="details-grid">
+        <div>
+          <h2>La Obra</h2>
+          <p>
+            <strong>Hera</strong> es la primera pieza de la colección <strong>Cráneo Noble</strong>, 
+            una línea de alta gama que fusiona el arte contemporáneo con la tradición artesanal. 
+            Cada detalle — la pedrería, las texturas, los metales — ha sido trabajado 
+            meticulosamente a mano por Patricia Torrez.
+          </p>
+          <p style="margin-top:20px;">
+            Al ser un cráneo natural intervenido artísticamente, <strong>no existe ni existirá 
+            otro igual</strong>. Es una pieza de colección, una declaración de carácter y trascendencia.
+          </p>
+        </div>
+        <div>
+          <h2>Especificaciones</h2>
+          <div class="specs">
+            <div class="spec-item">
+              <label>Colección</label>
+              <span>Cráneo Noble</span>
+            </div>
+            <div class="spec-item">
+              <label>Artista</label>
+              <span>Patricia Torrez</span>
+            </div>
+            <div class="spec-item">
+              <label>Edición</label>
+              <span>Única e irrepetible</span>
+            </div>
+            <div class="spec-item">
+              <label>Técnica</label>
+              <span>Intervención artesanal</span>
+            </div>
+            <div class="spec-item">
+              <label>Disponibilidad</label>
+              <span>Solo una pieza</span>
+            </div>
+            <div class="spec-item">
+              <label>Estado</label>
+              <span>Disponible</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <div class="container">
+      <h2>Arte, Raíz, Carácter, Trascendencia</h2>
+      <div class="values">
+        <div class="value">
+          <div class="num">01</div>
+          <div class="label">Arte</div>
+        </div>
+        <div class="value">
+          <div class="num">02</div>
+          <div class="label">Raíz</div>
+        </div>
+        <div class="value">
+          <div class="num">03</div>
+          <div class="label">Carácter</div>
+        </div>
+        <div class="value">
+          <div class="num">04</div>
+          <div class="label">Trascendencia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2>¿Interesado?</h2>
+      <p>Hera te espera. Escríbenos directamente a WhatsApp.</p>
+      <a href="https://wa.me/5214445101553?text=Hola%20me%20interesa%20la%20pieza%20Hera%20de%20la%20colecci%C3%B3n%20Cr%C3%A1neo%20Noble" class="whatsapp-btn" target="_blank">
+        &#x1F4AC; Contactar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Cráneo Noble — Patricia Torrez</span>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </footer>
+</body>
+</html>

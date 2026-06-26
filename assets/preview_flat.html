@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Flat-fielded Vectorization Preview</title>
+  <style>
+    body { background: #1a1a1a; color: #e0e0e0; font-family: system-ui, sans-serif; margin: 0; padding: 40px; display: flex; flex-direction: column; align-items: center; }
+    h1 { margin-bottom: 30px; font-weight: 300; }
+    .row { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+    .card { background: #262626; border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: center; }
+    .card h3 { margin-top: 0; color: #c9a96e; font-weight: 400; }
+    img, object { width: 380px; height: 475px; border: 1px solid #333; display: block; border-radius: 4px; background: #131210; object-fit: contain; }
+  </style>
+</head>
+<body>
+  <h1>Vista Previa: Corrección de Iluminación</h1>
+  <div class="row">
+    <div class="card">
+      <h3>1. Imagen Binarizada Con Corrección</h3>
+      <img src="trace_temp/flat_masked2.png" />
+    </div>
+    <div class="card">
+      <h3>2. SVG Resultante</h3>
+      <object type="image/svg+xml" data="trace_temp/flat_masked2.svg"></object>
+    </div>
+  </div>
+</body>
+</html>

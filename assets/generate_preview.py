@@ -1,0 +1,51 @@
+import os
+import subprocess
+
+def main():
+    # 1. Convertir processed_50.bmp a PNG para poder visualizarlo en HTML
+    subprocess.run([
+        "magick", "trace_temp/processed_50.bmp", "trace_temp/processed_50.png"
+    ], check=True)
+    
+    # 2. Escribir el archivo HTML de vista previa
+    html_content = """<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Visual Preview of Vectorization</title>
+  <style>
+    body { background: #1a1a1a; color: #e0e0e0; font-family: system-ui, sans-serif; margin: 0; padding: 40px; display: flex; flex-direction: column; align-items: center; }
+    h1 { margin-bottom: 30px; font-weight: 300; }
+    .row { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+    .card { background: #262626; border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: center; }
+    .card h3 { margin-top: 0; color: #c9a96e; font-weight: 400; }
+    img, svg, object { width: 350px; height: 437px; border: 1px solid #333; display: block; border-radius: 4px; background: #131210; object-fit: contain; }
+  </style>
+</head>
+<body>
+  <h1>Alineación y Trazo de Cráneo Noble</h1>
+  <div class="row">
+    <div class="card">
+      <h3>1. Diseño Original (Foto)</h3>
+      <img src="original_design.jpg" />
+    </div>
+    <div class="card">
+      <h3>2. Imagen Binarizada (Entrada Potrace)</h3>
+      <img src="trace_temp/processed_50.png" />
+    </div>
+    <div class="card">
+      <h3>3. SVG Generado (Resultado Final)</h3>
+      <object type="image/svg+xml" data="logo-craneo-noble.svg"></object>
+    </div>
+  </div>
+</body>
+</html>
+"""
+    
+    with open("preview.html", "w") as f:
+        f.write(html_content)
+        
+    print("Preview HTML generated successfully.")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>V7 Vectorization Preview</title>
+  <style>
+    body { background: #131210; color: #e0e0e0; font-family: system-ui, sans-serif; margin: 0; padding: 40px; display: flex; flex-direction: column; align-items: center; }
+    h1 { margin-bottom: 10px; font-weight: 300; color: #dfc593; }
+    p { margin-top: 0; margin-bottom: 40px; color: #a09278; }
+    .grid { display: flex; flex-direction: column; gap: 50px; width: 100%; max-width: 1200px; }
+    .row { display: flex; gap: 30px; justify-content: center; width: 100%; }
+    .card { background: #1a1916; border-radius: 12px; padding: 25px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); text-align: center; flex: 1; border: 1px solid #2a261f; }
+    .card h3 { margin-top: 0; color: #dfc593; font-weight: 400; font-size: 1.2rem; margin-bottom: 20px; }
+    img, object { width: 100%; height: 550px; border: 1px solid #2a261f; display: block; border-radius: 6px; background: #131210; object-fit: contain; }
+    .original-img { object-fit: contain; background: #1c1b18; }
+  </style>
+</head>
+<body>
+  <h1>Cráneo Noble - Vectorización V7</h1>
+  <p>Comparación con Corrección de Iluminación por Negación y División (Flat-Field)</p>
+  
+  <div class="grid">
+    <!-- Fila Original -->
+    <div class="row">
+      <div class="card" style="max-width: 500px;">
+        <h3>Diseño Original (Foto de Placa de Metal)</h3>
+        <img class="original-img" src="original_design.jpg" />
+      </div>
+    </div>
+    
+    <!-- Fila Umbral 78% -->
+    <div class="row">
+      <div class="card">
+        <h3>Binarizado (Umbral 78%)</h3>
+        <img src="trace_temp/processed_v7_78.png" />
+      </div>
+      <div class="card">
+        <h3>SVG Final (Umbral 78%)</h3>
+        <object type="image/svg+xml" data="logo-craneo-noble-v7-78.svg"></object>
+      </div>
+    </div>
+
+    <!-- Fila Umbral 80% -->
+    <div class="row">
+      <div class="card">
+        <h3>Binarizado (Umbral 80%)</h3>
+        <img src="trace_temp/processed_v7_80.png" />
+      </div>
+      <div class="card">
+        <h3>SVG Final (Umbral 80%)</h3>
+        <object type="image/svg+xml" data="logo-craneo-noble-v7-80.svg"></object>
+      </div>
+    </div>
+
+    <!-- Fila Umbral 82% -->
+    <div class="row">
+      <div class="card">
+        <h3>Binarizado (Umbral 82%)</h3>
+        <img src="trace_temp/processed_v7_82.png" />
+      </div>
+      <div class="card">
+        <h3>SVG Final (Umbral 82%)</h3>
+        <object type="image/svg+xml" data="logo-craneo-noble-v7-82.svg"></object>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
