@@ -82,21 +82,19 @@ Eso es Hera. Y cuando ves el resultado en persona, entiendes por qué no hay dos
 
 #CráneoNoble #Hera #HechoAMano #ProcesoArtesanal #ArteOriginal
 
-### Día 5 — La Mano
+### Día 5 — La Medida Exacta
 **Foto:** `fotos para pubilcar/IMG_1809.PNG`
 **Copy:**
-¿Ves esa mano en la foto? Ahí puedes notar la escala real.
+65 cm de alto. 70 cm de ancho de punta a punta de los cuernos.
 
-65 cm de alto. 70 cm de ancho. Cuernos que se extienden más allá de lo que abarca una mano humana.
+Para que te des una idea: es más grande que la mayoría de las pantallas de televisión. Cuando la ves en vivo, lo primero que notas es su tamaño. Y luego empiezas a ver los detalles: la turquesa incrustada, la joyería aplicada a mano, la textura natural del hueso que ningún molde puede imitar.
 
-Hera es imponente no solo por su tamaño, sino por lo que lleva puesto: joyería aplicada a mano, turquesa incrustada en el hueso natural, un emblema dorado que sella la pieza.
-
-Las fotos muestran el diseño. En vivo se siente el peso, la textura, la presencia.
+Las fotos muestran el diseño. En vivo se siente el peso, la textura, la presencia. Y eso solo se experimenta viniendo al estudio.
 
 📍 Estudio de Arte ARCT — visítala en persona
 📲 +52 444 510 1553
 
-#CráneoNoble #Hera #EscalaReal #ArteEnVivo #PiezaDeColección
+#CráneoNoble #Hera #TamañoReal #ArteEnVivo #PiezaDeColección
 
 ### Día 6 — ¿Dónde la pondrías?
 **Foto:** `fotos para pubilcar/IMG_1810 2.PNG`

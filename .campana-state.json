@@ -1,6 +1,9 @@
 {
-  "currentDay": 2,
-  "publishedDays": [1],
+  "currentDay": 3,
+  "publishedDays": [
+    1,
+    2
+  ],
   "startedAt": "2026-06-26T04:54:11.403Z",
   "pieza": "Hera",
   "material": "Cráneo de toro real con joyería y turquesa aplicadas a mano",
