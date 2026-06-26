@@ -3,8 +3,9 @@
 **Pieza:** Hera
 **Colección:** Cráneo Noble #01
 **Artista:** Patricia Torrez
-**Precio debut:** $1,800 MXN
-**Precio regular (próximas):** $4,500+ MXN
+**Descripción:** Cráneo de toro real seleccionado por la forma y fuerza de sus cuernos. Intervención de joyería y aplicaciones de turquesa hechas completamente a mano, respetando la textura natural del hueso.
+**Tamaño:** ~65 cm alto x 70 cm ancho (punta a punta de cuernos)
+**Precio:** Consultar vía WhatsApp
 **WhatsApp:** +52 444 510 1553
 
 ## Estrategia
@@ -23,13 +24,12 @@ Ella es Hera.
 
 No es un adorno. No es un objeto decorativo cualquiera. Es la primera pieza de una colección que no se va a repetir.
 
-Cráneo natural intervenido a mano por Patricia Torrez. Pintura, textura, carácter. Todo hecho una sola vez, sin moldes, sin réplicas, sin segunda oportunidad.
+Cráneo de toro real, seleccionado por la forma y fuerza de sus cuernos. Intervenido a mano por Patricia Torrez con aplicaciones de joyería y turquesa, respetando la textura natural del hueso.
 
-Las piezas únicas no se compran porque hagan falta. Se compran porque encontrarlas es raro.
+Mide 65 cm de alto por 70 cm de ancho de punta a punta. Es grande, imponente, y cuando la ves en persona entiendes por qué las fotos se quedan cortas.
 
-Hera ya fue encontrada. Ahora solo falta que llegue a quien sepa lo que tiene entre manos.
+No hay molde. No hay réplica. Hay un cráneo real y una artista que lo convirtió en pieza de colección.
 
-🏺 Pieza #01 — $1,800 MXN
 🔗 https://pmailprueba-apps.github.io/craneo-nobles/
 📲 WhatsApp: +52 444 510 1553
 
@@ -40,9 +40,11 @@ Hera ya fue encontrada. Ahora solo falta que llegue a quien sepa lo que tiene en
 **Copy:**
 El rostro de Hera no se repite.
 
-No hay molde. No hay impresión. No hay Ctrl+C, Ctrl+V. Hay un cráneo real, una artista, horas de trabajo y una decisión detrás de cada trazo.
+No hay molde. No hay impresión. No hay Ctrl+C, Ctrl+V. Hay un cráneo de toro real seleccionado a mano, joyería aplicada pieza por pieza, turquesa incrustada en el hueso natural.
 
-Puedes intentar describirla: "tiene un fondo negro, acentos verdes, un emblema dorado…" Pero describir no es lo mismo que tenerla enfrente.
+Cada aplicación de turquesa y cada detalle de joyería que ves están puestos a mano, uno por uno, respetando la textura y la forma original del cráneo.
+
+Puedes intentar describirla: "tiene turquesa, cuernos grandes, un emblema dorado…" Pero describir no es lo mismo que tenerla enfrente.
 
 Cuando algo se hace a mano, se nota. Se siente. Se distingue aunque esté al otro lado de una foto.
 
@@ -50,83 +52,81 @@ Cuando algo se hace a mano, se nota. Se siente. Se distingue aunque esté al otr
 
 #CráneoNoble #Hera #HechoAMano #ArteOriginal #PiezaDeColección
 
-### Día 3 — La Silueta
+### Día 3 — La Proporción
 **Foto:** `fotos para pubilcar/IMG_1810 2.PNG`
 **Copy:**
-Hay piezas que se ven bien en una foto. Y hay piezas que se ven mejor en tu espacio.
+65 cm de alto. 70 cm de ancho de punta a punta.
 
-Hera no fue diseñada para existir en una galería. Fue diseñada para existir en tu casa, en tu estudio, en tu sala. Para que cuando alguien la vea, pregunte: "¿eso dónde lo conseguiste?"
+Hera no pasa desapercibida. No es una pieza pequeña que se esconde en un estante. Es un cráneo de toro real con cuernos que imponen desde que entras a la habitación.
 
-Esa es la diferencia entre un adorno y una pieza de colección. Una pasa desapercibida. La otra exige ser vista.
+Cuando vienes a verla al Estudio de Arte ARCT, lo primero que dices es: "es más grande de lo que pensaba".
 
-Hera exige.
+Y sí. Porque las fotos no capturan el volumen, la textura del hueso, el brillo de la joyería aplicada a mano. Eso solo se ve en persona.
 
-📲 WhatsApp: +52 444 510 1553
+📲 Agenda una visita privada: +52 444 510 1553
 
-#CráneoNoble #Hera #DiseñoDeInteriores #PiezaÚnica #ArteEnCasa
+#CráneoNoble #Hera #TamañoReal #ArteEnPersona #PiezaÚnica
 
-### Día 4 — Arte, No Adorno
+### Día 4 — El Proceso
 **Foto:** `fotos para pubilcar/IMG_1810.PNG`
 **Copy:**
-"Hera" no se llama así porque suene bonito. Se llama así porque inaugura una colección.
+Seleccionar el cráneo lleva semanas. No todos tienen la forma, la simetría, la fuerza en los cuernos que se necesita.
 
-Todo coleccionista entiende que la pieza #01 siempre es especial. No porque sea mejor o peor que las que siguen, sino porque es la primera. La que abrió la puerta.
+Una vez seleccionado, comienza el trabajo a mano: joyería aplicada pieza por pieza, turquesa incrustada respetando las curvas del hueso, texturas que solo pueden hacerse con manos humanas porque ningún molde sigue la forma irregular de un cráneo real.
 
-Después de Hera vienen más piezas. Algunas más elaboradas, con más detalles, con más tiempo de trabajo. Pero ninguna va a ser la #01.
+Horas. Días. Una sola pieza.
 
-Eso no se fabrica. Se hace. Y cuando se hace, solo pasa una vez.
+Eso es Hera. Y cuando ves el resultado en persona, entiendes por qué no hay dos iguales.
 
-💀 Pieza fundadora de Cráneo Noble
-💰 $1,800 MXN (precio debut — próximas desde $4,500)
-📲 WhatsApp: +52 444 510 1553
+📲 Ven a conocerla al Estudio de Arte ARCT: +52 444 510 1553
 
-#CráneoNoble #Hera #Coleccionismo #PiezaFundadora #ArteOriginal
+#CráneoNoble #Hera #HechoAMano #ProcesoArtesanal #ArteOriginal
 
-### Día 5 — Precio Debut
+### Día 5 — La Mano
 **Foto:** `fotos para pubilcar/IMG_1809.PNG`
 **Copy:**
-$1,800 MXN.
+¿Ves esa mano en la foto? Ahí puedes notar la escala real.
 
-Hablemos claro: una pieza como esta, con el trabajo manual que tiene, el tiempo que requiere, y la calidad del acabado, no va a costar $1,800 siempre.
+65 cm de alto. 70 cm de ancho. Cuernos que se extienden más allá de lo que abarca una mano humana.
 
-De hecho, las piezas que vienen después de Hera arrancan en $4,500. Pero Hera es la #01. Es la carta de presentación. Por eso tiene un precio de introducción.
+Hera es imponente no solo por su tamaño, sino por lo que lleva puesto: joyería aplicada a mano, turquesa incrustada en el hueso natural, un emblema dorado que sella la pieza.
 
-Si entiendes el valor de tener una pieza fundadora de una colección, sabes que esto es una oportunidad más que un precio.
+Las fotos muestran el diseño. En vivo se siente el peso, la textura, la presencia.
 
-Si solo buscas un adorno barato, este no es tu lugar.
+📍 Estudio de Arte ARCT — visítala en persona
+📲 +52 444 510 1553
 
-📲 WhatsApp: +52 444 510 1553
+#CráneoNoble #Hera #EscalaReal #ArteEnVivo #PiezaDeColección
 
-#CráneoNoble #Hera #PrecioDebut #Oportunidad #ArteDeColección
-
-### Día 6 — Visualización
+### Día 6 — ¿Dónde la pondrías?
 **Foto:** `fotos para pubilcar/IMG_1810 2.PNG`
 **Copy:**
-¿Dónde vas a poner a Hera?
+Cuando la gente viene al estudio a ver a Hera en persona, pasan dos cosas:
 
-Porque una pieza así no se guarda en un clóset. Se pone donde se ve. Sobre una repisa con luz. En un estudio. En una sala minimalista. En algún lugar donde cuando pase alguien, se detenga a verla.
+1. Dicen "es más grande de lo que pensaba".
+2. Inmediatamente empiezan a buscar dónde ponerla en su casa.
 
-Esa es la función del arte real: detener a la gente.
+Porque una pieza como esta no se guarda. Se exhibe. Se coloca en un lugar estratégico, con buena luz, donde cada persona que entre se detenga a verla.
 
-Si al ver la foto ya te imaginaste dónde queda en tu casa, entonces ya sabes lo que tienes que hacer.
+Hera está diseñada para ocupar espacio. Para tener presencia. Para que cuando la veas, no puedas ignorarla.
 
-📲 WhatsApp: +52 444 510 1553
+📍 Ven a conocerla al Estudio de Arte ARCT
+📲 +52 444 510 1553
 
-#CráneoNoble #Hera #ArteEnCasa #Diseño #PiezaÚnica
+#CráneoNoble #Hera #ArteEnCasa #Presencia #PiezaÚnica
 
-### Día 7 — Última Llamada
+### Día 7 — Ven a Conocerla
 **Foto:** `fotos para pubilcar/IMG_1810.PNG`
 **Copy:**
-Hera se va.
+Si has llegado hasta aquí viendo las fotos de Hera, hay una razón.
 
-En algún punto de esta semana, alguien va a decidir que esta pieza merece estar en su espacio. Y cuando eso pase, Hera desaparece del radar.
+Algo en esta pieza te llamó la atención. Y está bien. Es normal. Hera tiene esa capacidad de detener la mirada.
 
-No hay segunda unidad. No hay "avísame si hay otra". No hay lista de espera porque no hay piezas iguales.
+Pero las fotos son solo el aperitivo. El volumen, la textura del hueso, el brillo de la joyería, la turquesa incrustada a mano — eso solo se experimenta en persona.
 
-Si has estado viendo las fotos, leyendo los posts, y pensando "me gusta pero…" — este es el momento de dejar de pensar y actuar.
+No tienes que comprarla hoy. Pero sí deberías venir a verla.
 
-Las piezas de colección no esperan a que te decidas. Se deciden por ti.
+📍 Estudio de Arte ARCT — visita privada con cita
+📲 +52 444 510 1553
 
-📲 Última oportunidad: +52 444 510 1553
-
-#CráneoNoble #Hera #ÚltimaOportunidad #PiezaÚnica #Coleccionismo
+#CráneoNoble #Hera #Visítala #ArteEnPersona #PiezaÚnica

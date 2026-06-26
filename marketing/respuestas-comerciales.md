@@ -3,37 +3,45 @@
 **Pieza:** Hera
 **Colección:** Cráneo Noble (Arte, Raíz, Carácter, Trascendencia)
 **Artista y Diseñadora:** Patricia Torrez
+**Material:** Cráneo de toro real, joyería aplicada a mano, turquesa
+**Tamaño:** ~65 cm alto x 70 cm ancho (punta a punta de cuernos)
+**Ubicación:** Estudio de Arte ARCT (visitas privadas con cita)
+**Precio:** Consultar vía WhatsApp
 
 ---
 
-## Opción 1: Directa y Exclusiva (Cierre rápido)
+## Opción 1: Respuesta Oficial (Usar SIEMPRE como primera respuesta)
 
-"¡Hola! Qué gusto que te interese. Te cuento que esta pieza de la colección Cráneo Noble es una obra completamente única e irrepetible, diseñada y creada a mano por la artista y diseñadora Patricia Torrez. Al ser un cráneo natural intervenido artísticamente, no existe ni existirá otro igual en el mundo. Es una verdadera pieza de colección. ¿Te gustaría que te pase los detalles de compra o prefieres coordinar el envío de una vez?"
+"¡Hola! Qué gusto que te haya gustado la pieza. Te cuento rápido los detalles:
 
----
+¿Qué es? Es un cráneo de toro real y auténtico, seleccionado especialmente por la imponente forma y fuerza de sus cuernos. Toda la intervención de joyería y las aplicaciones de turquesa que ves al frente están hechas completamente a mano, respetando la textura natural del hueso.
 
-## Opción 2: Enfocada en el Valor Artístico
+Tamaño: Es una pieza grande y con mucha presencia. Mide aproximadamente 65 cm de alto por 70 cm de ancho (de punta a punta de los cuernos). Para que te des una idea real del tamaño, te adjunto una foto donde se ve junto a una mano; ahí puedes notar la escala perfecta.
 
-"¡Buenas tardes! Un gusto saludarte. El cráneo por el que preguntas es la obra 'Hera', una pieza exclusiva de nuestra línea de alta gama. Fue diseñada meticulosamente por la renombrada artista Patricia Torrez. Como puedes apreciar en los detalles de pedrería, texturas y metales, es un trabajo artesanal que fusiona arte, raíz y trascendencia. Es una pieza única (no hacemos réplicas). Si te interesa asegurar esta obra para tu espacio, avísame para congelártela, ya que varios ojos están puestos en ella."
+¿Dónde verlo? Lo tenemos en nuestro espacio, el Estudio de Arte ARCT. Como este tipo de obras cambia muchísimo en vivo por las texturas y el volumen, lo ideal es que vengas a verlo en persona.
 
----
-
-## Opción 3: Corta y de Alto Impacto (WhatsApp)
-
-"¡Hola! Es una joya de pieza. Se llama 'Hera' y es una obra única e irrepetible firmada por la diseñadora y artista Patricia Torrez. Al ser una pieza exclusiva de Cráneo Noble, solo hay una disponible. Si te enamoró, te sugiero aprovecharla hoy mismo antes de que vuele. ¿Te paso la información de pago?"
+Dime qué día de la semana te queda bien y nos organizamos para recibirte de manera privada. ¡Un saludo!"
 
 ---
 
-## Opción 4: Lanzamiento Debut #01 (Protección de valor para piezas futuras de $4,500+)
+## Opción 2: Seguimiento (si no responde después de 3 días)
 
-"¡Hola! Qué gusto tu interés. Te comento que 'Hera' es la pieza #01 con la que inauguramos la colección Cráneo Noble de la diseñadora Patricia Torrez. Al ser nuestra pieza debut y de introducción, tiene un precio especial único de **$1,800 MXN** (nuestras siguientes obras con detalles más complejos tendrán su valor regular a partir de $4,500 MXN). Es una oportunidad única de adquirir la pieza fundadora de la marca a un costo preferencial. ¿Te gustaría coordinar los detalles de compra o prefieres que te pase los datos de pago?"
+"¡Hola! Te escribo de nuevo para ver si tuviste oportunidad de revisar la información de Hera. La pieza sigue disponible por ahora, pero como es una pieza única, no sé cuánto tiempo más va a estar aquí. Si te interesa verla en persona, estamos en el Estudio de Arte ARCT. Avísame y te agendo un horario privado. ¡Saludos!"
+
+---
+
+## Opción 3: Cierre (cuando ya la vieron en persona y están decidiendo)
+
+"Qué gusto que viniste a conocer a Hera en vivo. Como pudiste ver, las fotos no le hacen justicia — el volumen, la textura, los detalles de joyería y turquesa se aprecian completamente distinto en persona. Es una pieza que no se va a repetir. Si te decidiste, te la aparto y coordinamos la entrega. Si tienes dudas, aquí estoy para resolverlas."
 
 ---
 
 ## Tips clave para cierre
 
 1. Usa el nombre "Hera" — le otorga estatus de pieza de galería
-2. Destaca "Arte, Raíz, Carácter y Trascendencia"
-3. Genera escasez real: la naturaleza del cráneo + intervención manual impiden réplicas exactas
-4. Enmarca los $1,800 como una oportunidad de "pieza de introducción #01" para no devaluar las siguientes obras de $4,500.
+2. Destaca que es un cráneo REAL de toro, seleccionado a mano
+3. Menciona siempre que la joyería y turquesa están aplicadas a mano, una por una
+4. El tamaño (65x70 cm) es un argumento de venta importante — es imponente
+5. Ofrece siempre la visita al Estudio de Arte ARCT — en persona se vende sola
+6. Genera escasez real: la naturaleza del cráneo + intervención manual impiden réplicas exactas
 
