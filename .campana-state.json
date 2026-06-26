@@ -1,16 +1,17 @@
 {
-  "currentDay": 3,
+  "currentDay": 4,
   "publishedDays": [
     1,
-    2
+    2,
+    3
   ],
   "startedAt": "2026-06-26T04:54:11.403Z",
   "pieza": "Hera",
-  "material": "Cráneo de toro real con joyería y turquesa aplicadas a mano",
-  "tamaño": "65 cm alto x 70 cm ancho (punta a punta de cuernos)",
+  "material": "Cr\u00e1neo de toro real con joyer\u00eda y turquesa aplicadas a mano",
+  "tama\u00f1o": "65 cm alto x 70 cm ancho (punta a punta de cuernos)",
   "ubicacion": "Estudio de Arte ARCT (visitas privadas con cita)",
-  "precio": "Consultar vía WhatsApp",
+  "precio": "Consultar v\u00eda WhatsApp",
   "whatsapp": "+52 444 510 1553",
-  "respuestaOficial": "marketing/respuestas-comerciales.md > Opción 1",
-  "estado": "EN VENTA — Publicando diariamente hasta que se venda"
+  "respuestaOficial": "marketing/respuestas-comerciales.md > Opci\u00f3n 1",
+  "estado": "EN VENTA \u2014 Publicando diariamente hasta que se venda"
 }
