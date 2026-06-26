@@ -1,0 +1,23 @@
+name: Campaña Hera
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Correr campaña
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: |
+          chmod +x scripts/publicar-campana.sh
+          ./scripts/publicar-campana.sh
+      - name: Commit estado
+        run: |
+          git config user.name "Bot"
+          git config user.email "bot@craneonoble.com"
+          git add .campana-state.json cron-campana.log
+          git diff --cached --quiet || git commit -m "📅 Dia auto"
+          git push
