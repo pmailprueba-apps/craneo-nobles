@@ -320,12 +320,9 @@
       position: relative;
       overflow: hidden;
       background: var(--surface);
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 3 / 4;
     }
-    .gallery-item.wide {
-      aspect-ratio: 16 / 9;
-    }
-    .gallery-item.tall {
+    .gallery-item.featured {
       aspect-ratio: 3 / 4;
     }
     .gallery-item img {
@@ -342,9 +339,9 @@
         grid-template-columns: 1fr;
         gap: 12px;
       }
-      .gallery-item.wide,
-      .gallery-item.tall {
-        aspect-ratio: 4 / 3;
+      .gallery-item,
+      .gallery-item.featured {
+        aspect-ratio: 3 / 4;
       }
     }
 
@@ -609,10 +606,10 @@
         <p>Cada ángulo revela un detalle distinto. Hecha a mano, pieza única.</p>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-item wide">
+        <div class="gallery-item featured">
           <img src="assets/gallery/IMG_1810.PNG" alt="Hera — vista frontal">
         </div>
-        <div class="gallery-item tall">
+        <div class="gallery-item">
           <img src="assets/gallery/hera luz.png" alt="Hera — iluminada">
         </div>
         <div class="gallery-item">
