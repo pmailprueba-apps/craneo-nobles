@@ -56,6 +56,11 @@
       color: #fff;
     }
     nav .logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
     nav a {
       font-size: 13px;
       letter-spacing: 0.08em;
@@ -65,6 +70,14 @@
       transition: opacity 0.2s;
     }
     nav a:hover { opacity: 1; }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .nav-links { gap: 16px; }
+    }
 
     /* Hero */
     .hero {
@@ -269,6 +282,147 @@
       font-weight: 300;
     }
 
+    /* Gallery */
+    .gallery {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .gallery-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .gallery-header p {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .gallery-grid .wide {
+      grid-column: 1 / -1;
+    }
+    .gallery-grid .tall {
+      grid-row: span 2;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      aspect-ratio: 4 / 3;
+    }
+    .gallery-item.wide {
+      aspect-ratio: 16 / 9;
+    }
+    .gallery-item.tall {
+      aspect-ratio: 3 / 4;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .gallery-item.wide,
+      .gallery-item.tall {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    /* Coming Soon */
+    .coming-soon {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .coming-soon .teaser {
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+    .coming-soon .teaser h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .coming-soon .teaser p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+    .coming-soon .teaser p strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+    .coming-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .coming-card {
+      aspect-ratio: 3 / 4;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 32px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .coming-card:hover {
+      border-color: var(--accent);
+      background: rgba(201, 169, 110, 0.03);
+    }
+    .coming-card .icon {
+      font-size: 32px;
+      opacity: 0.3;
+    }
+    .coming-card .label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+    .coming-card .status {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 400;
+    }
+    @media (max-width: 768px) {
+      .coming-preview {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+      }
+    }
+
     /* Contact / CTA */
     .contact {
       padding: 120px 0;
@@ -347,12 +501,16 @@
 <body>
   <nav>
     <div class="logo">Cráneo <span>Noble</span></div>
-    <a href="https://wa.me/5214445101553?text=Hola%20quiero%20informes%20sobre%20Hera" target="_blank">WhatsApp</a>
+    <div class="nav-links">
+      <a href="#gallery">Galería</a>
+      <a href="#proximamente">Próximamente</a>
+      <a href="https://wa.me/5214445101553?text=Hola%20quiero%20informes%20sobre%20Hera" target="_blank">WhatsApp</a>
+    </div>
   </nav>
 
   <section class="hero">
     <div class="hero-image">
-      <img src="assets/IMG_1810.PNG" alt="Hera — Cráneo Noble de Patricia Torrez" class="hero-img">
+      <img src="assets/gallery/IMG_1810.PNG" alt="Hera — Cráneo Noble de Patricia Torrez" class="hero-img">
     </div>
     <div class="hero-content">
       <div class="eyebrow">Colección Cráneo Noble</div>
@@ -439,6 +597,62 @@
         <div class="value">
           <div class="num">04</div>
           <div class="label">Trascendencia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <h2>Galería Hera</h2>
+        <p>Cada ángulo revela un detalle distinto. Hecha a mano, pieza única.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item wide">
+          <img src="assets/gallery/IMG_1810.PNG" alt="Hera — vista frontal">
+        </div>
+        <div class="gallery-item tall">
+          <img src="assets/gallery/hera luz.png" alt="Hera — iluminada">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery/hera sin luz.png" alt="Hera — luz natural">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery/hera 2.1.png" alt="Hera — detalle">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery/IMG_1809.PNG" alt="Hera — acercamiento">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="coming-soon" id="proximamente">
+    <div class="container">
+      <div class="teaser">
+        <h2>Próximamente</h2>
+        <p>
+          La colección no termina aquí. Patricia trabaja actualmente en 
+          <strong>nuevas piezas</strong> que llevarán el sello Cráneo Noble 
+          a nuevas direcciones. Cada una, como Hera, será única e irrepetible.
+        </p>
+      </div>
+      <div class="coming-preview">
+        <div class="coming-card">
+          <div class="icon">✦</div>
+          <div class="label">Nueva pieza</div>
+          <div class="status">En proceso</div>
+        </div>
+        <div class="coming-card">
+          <div class="icon">✦</div>
+          <div class="label">Nueva pieza</div>
+          <div class="status">En proceso</div>
+        </div>
+        <div class="coming-card">
+          <div class="icon">✦</div>
+          <div class="label">Nueva pieza</div>
+          <div class="status">En proceso</div>
         </div>
       </div>
     </div>
