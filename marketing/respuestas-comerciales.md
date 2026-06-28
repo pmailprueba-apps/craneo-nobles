@@ -2,7 +2,7 @@
 
 **Pieza:** Hera
 **Colección:** Cráneo Noble (Arte, Raíz, Carácter, Trascendencia)
-**Artista y Diseñadora:** Patricia Torrez
+**Artista y Diseñadora:** Patricia Torres
 **Material:** Cráneo de toro real, joyería aplicada a mano, turquesa
 **Tamaño:** ~65 cm alto x 70 cm ancho (punta a punta de cuernos)
 **Ubicación:** Estudio de Arte ARCT (visitas privadas con cita)

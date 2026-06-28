@@ -2,7 +2,7 @@
 
 ## Producto
 - **Pieza:** Hera (colección Cráneo Noble #01)
-- **Artista:** Patricia Torrez
+- **Artista:** Patricia Torres
 - **Precio debut:** $1,800 MXN
 - **Próximas piezas:** desde $4,500 MXN
 - **WhatsApp:** +52 444 510 1553

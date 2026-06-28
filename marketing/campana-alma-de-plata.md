@@ -2,13 +2,13 @@
 
 **Pieza:** Alma de Plata
 **Colección:** Cráneo Noble
-**Artista:** Patricia Torrez
+**Artista:** Patricia Torres
 **WhatsApp:** +52 444 510 1553
 
 ---
 
 ## Día 1 — Presentación
-Alma de Plata llega. La segunda pieza de la colección Cráneo Noble ya está aquí. Plata, luz y carácter en un cráneo natural intervenido a mano por Patricia Torrez. Pieza única. Irrepetible. #CráneoNoble #AlmaDePlata #PiezaÚnica
+Alma de Plata llega. La segunda pieza de la colección Cráneo Noble ya está aquí. Plata, luz y carácter en un cráneo natural intervenido a mano por Patricia Torres. Pieza única. Irrepetible. #CráneoNoble #AlmaDePlata #PiezaÚnica
 
 ## Día 2 — El Material
 El alma se viste de plata. Metales selectos, pedrería fina y una composición que juega con la luz natural. Cada detalle colocado a mano, sin prisa, sin molde. Así nace Alma de Plata. #CráneoNoble #AlmaDePlata #Arte
@@ -33,7 +33,7 @@ Alma de Plata ya está disponible. Pieza única, intervenida a mano, lista para 
 ## Respuestas comerciales
 
 **Respuesta inicial:**
-Gracias por tu interés en Alma de Plata. Es una pieza única intervenida a mano por Patricia Torrez — la segunda de la colección Cráneo Noble. ¿Te gustaría más fotos o agendar una cita para verla en persona?
+Gracias por tu interés en Alma de Plata. Es una pieza única intervenida a mano por Patricia Torres — la segunda de la colección Cráneo Noble. ¿Te gustaría más fotos o agendar una cita para verla en persona?
 
 **Seguimiento (3 días sin respuesta):**
 ¿Te quedó alguna duda sobre Alma de Plata? Sigue disponible como pieza única. Si quieres más fotos o video por WhatsApp, con gusto te comparto.

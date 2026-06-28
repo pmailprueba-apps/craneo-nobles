@@ -2,7 +2,7 @@
 
 **Arte, Raíz, Carácter, Trascendencia.**
 
-Marca de arte fundada por Patricia Torrez. Piezas únicas e irrepetibles — cráneos naturales intervenidos artísticamente. Cada obra es una pieza de colección, sin réplicas.
+Marca de arte fundada por Patricia Torres. Piezas únicas e irrepetibles — cráneos naturales intervenidos artísticamente. Cada obra es una pieza de colección, sin réplicas.
 
 ## Catálogo
 

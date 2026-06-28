@@ -2,7 +2,7 @@
 
 **Pieza:** Hera
 **Colección:** Cráneo Noble #01
-**Artista:** Patricia Torrez
+**Artista:** Patricia Torres
 **Descripción:** Cráneo de toro real seleccionado por la forma y fuerza de sus cuernos. Intervención de joyería y aplicaciones de turquesa hechas completamente a mano, respetando la textura natural del hueso.
 **Tamaño:** ~65 cm alto x 70 cm ancho (punta a punta de cuernos)
 **Precio:** Consultar vía WhatsApp
@@ -24,7 +24,7 @@ Ella es Hera.
 
 No es un adorno. No es un objeto decorativo cualquiera. Es la primera pieza de una colección que no se va a repetir.
 
-Cráneo de toro real, seleccionado por la forma y fuerza de sus cuernos. Intervenido a mano por Patricia Torrez con aplicaciones de joyería y turquesa, respetando la textura natural del hueso.
+Cráneo de toro real, seleccionado por la forma y fuerza de sus cuernos. Intervenido a mano por Patricia Torres con aplicaciones de joyería y turquesa, respetando la textura natural del hueso.
 
 Mide 65 cm de alto por 70 cm de ancho de punta a punta. Es grande, imponente, y cuando la ves en persona entiendes por qué las fotos se quedan cortas.
 

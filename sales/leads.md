@@ -22,7 +22,7 @@ Este documento sirve para registrar e ir dando seguimiento a los prospectos inte
 ## Mensajes de Seguimiento Recomendados
 
 ### 1. Para los que recibieron saludo hoy (Alejandro, Gregorio, Carter, Silvano, Nathaly, Alexis)
-> "¡Hola! Para darte más detalle: la pieza se llama **'Hera'** y es una obra única e irrepetible intervenida a mano por la artista Patricia Torrez (pedrería fina, texturas y metales). No hacemos réplicas. ¿Te gustaría ver más fotos a detalle o te interesa saber el método de entrega?"
+> "¡Hola! Para darte más detalle: la pieza se llama **'Hera'** y es una obra única e irrepetible intervenida a mano por la artista Patricia Torres (pedrería fina, texturas y metales). No hacemos réplicas. ¿Te gustaría ver más fotos a detalle o te interesa saber el método de entrega?"
 
 ### 2. Mensaje de Escasez / Cierre para los de hace días (Jose, Rosy)
 > "Hola, espero que estés muy bien. Te escribo rápido porque tengo a un par de personas interesadas en **'Hera'** para este fin de semana. Al ser una pieza artística única de colección, solo hay una disponible. Si aún te interesa, avísame para darte prioridad de compra."
