@@ -345,6 +345,101 @@
       }
     }
 
+    /* Alma de Plata */
+    .alma {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--bg) 0%, #0f0f0f 50%, var(--bg) 100%);
+    }
+    .alma-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .alma-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .alma-image {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .alma-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .alma-image .placeholder {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0.4;
+    }
+    .alma-content .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    .alma-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 0.95;
+      margin-bottom: 8px;
+    }
+    .alma-content .tagline {
+      font-size: 14px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .alma-content .desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .alma-content .desc strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+    .alma-content .alma-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .alma-specs .spec label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 2px;
+      font-weight: 300;
+    }
+    .alma-specs .spec span {
+      font-size: 14px;
+      color: var(--text);
+    }
+    @media (max-width: 768px) {
+      .alma-content .alma-specs { grid-template-columns: 1fr; }
+    }
+
     /* Coming Soon */
     .coming-soon {
       padding: 120px 0;
@@ -503,6 +598,7 @@
     <div class="logo">Cráneo <span>Noble</span></div>
     <div class="nav-links">
       <a href="#gallery">Galería</a>
+      <a href="#alma-de-plata">Alma de Plata</a>
       <a href="#proximamente">Próximamente</a>
       <a href="https://wa.me/5214445101553?text=Hola%20quiero%20informes%20sobre%20Hera" target="_blank">WhatsApp</a>
     </div>
@@ -628,22 +724,57 @@
     </div>
   </section>
 
+  <section class="alma" id="alma-de-plata">
+    <div class="container">
+      <div class="alma-grid">
+        <div class="alma-image">
+          <span class="placeholder">Foto de Alma de Plata</span>
+        </div>
+        <div class="alma-content">
+          <div class="eyebrow">Segunda pieza — Colección Cráneo Noble</div>
+          <h2>Alma de Plata</h2>
+          <div class="tagline">Plata · Luz · Eterno · Reflejo</div>
+          <p class="desc">
+            <strong>Alma de Plata</strong> es la segunda pieza de la colección, concebida bajo 
+            un mismo sello artesanal pero con personalidad propia. El cráneo se viste de 
+            plata, juega con la luz y proyecta un carácter distinto al de Hera — más 
+            contenido, más mineral, igual de eterno.
+          </p>
+          <div class="alma-specs">
+            <div class="spec">
+              <label>Colección</label>
+              <span>Cráneo Noble</span>
+            </div>
+            <div class="spec">
+              <label>Artista</label>
+              <span>Patricia Torrez</span>
+            </div>
+            <div class="spec">
+              <label>Edición</label>
+              <span>Única e irrepetible</span>
+            </div>
+            <div class="spec">
+              <label>Estado</label>
+              <span>Próximamente</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5214445101553?text=Hola%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Alma%20de%20Plata%20-%20Cr%C3%A1neo%20Noble" class="btn-primary" target="_blank">Consultar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="coming-soon" id="proximamente">
     <div class="container">
       <div class="teaser">
         <h2>Próximamente</h2>
         <p>
-          La colección no termina aquí. Patricia trabaja actualmente en 
-          <strong>nuevas piezas</strong> que llevarán el sello Cráneo Noble 
-          a nuevas direcciones. Cada una, como Hera, será única e irrepetible.
+          La colección Cráneo Noble sigue creciendo. Patricia trabaja en 
+          <strong>nuevas piezas</strong> que exploran direcciones distintas, 
+          cada una única e irrepetible.
         </p>
       </div>
       <div class="coming-preview">
-        <div class="coming-card">
-          <div class="icon">✦</div>
-          <div class="label">Nueva pieza</div>
-          <div class="status">En proceso</div>
-        </div>
         <div class="coming-card">
           <div class="icon">✦</div>
           <div class="label">Nueva pieza</div>
