@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stats — Cráneo Noble</title>
+<style>
+  :root{--bg:#0c0c0c;--surface:#141414;--border:#1f1f1f;--text:#e8e6e3;--muted:#8a8885;--accent:#c9a96e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:24px;max-width:800px;margin:0 auto}
+  h1{font-size:24px;margin-bottom:4px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:24px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px}
+  .card .label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:4px}
+  .card .value{font-size:28px;font-weight:700;color:var(--accent)}
+  .card .value.small{font-size:16px}
+  h2{font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin:20px 0 8px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px}
+  th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--border);color:var(--muted);font-weight:500;font-size:11px}
+  td{padding:6px 8px;border-bottom:1px solid var(--border)}
+  tr:last-child td{border:none}
+  .refresh{display:inline-block;padding:8px 20px;background:var(--accent);color:var(--bg);border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:13px;margin-top:16px}
+  .error{color:#f85149;font-size:13px;margin:8px 0}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>📊 Visitantes — Cráneo Noble</h1>
+<p class="sub" id="status">Cargando...</p>
+<div class="grid" id="summary">
+  <div class="card"><div class="label">Visitas totales</div><div class="value" id="total">—</div></div>
+  <div class="card"><div class="label">Visitantes únicos</div><div class="value" id="unique">—</div></div>
+</div>
+<h2>📅 Por día</h2>
+<table id="byDay"><tr><th>Fecha</th><th>Visitas</th></tr></table>
+<h2>📄 Por página</h2>
+<table id="byPage"><tr><th>Página</th><th>Visitas</th></tr></table>
+<h2>🕐 Últimas visitas</h2>
+<table id="recent"><tr><th>Hora</th><th>Página</th><th>IP</th></tr></table>
+<button class="refresh" onclick="loadStats()">↻ Actualizar</button>
+<script>
+async function loadStats(){
+  const s=document.getElementById('status');s.textContent='Cargando...';
+  try{
+    const r=await fetch('https://truly-campaigns-excel-genuine.trycloudflare.com/stats');
+    const d=await r.json();
+    document.getElementById('total').textContent=d.totalVisits;
+    document.getElementById('unique').textContent=d.uniqueVisitors;
+    document.getElementById('status').textContent='Actualizado: '+new Date().toLocaleString('es-MX');
+    fillTable('byDay',d.byDay);
+    fillTable('byPage',d.byPage);
+    fillRecent(d.recentVisits);
+  }catch(e){
+    document.getElementById('status').textContent='Error al cargar';
+    document.getElementById('status').className='sub error';
+  }
+}
+function fillTable(id,data){
+  const t=document.getElementById(id);
+  while(t.rows.length>1)t.deleteRow(1);
+  const sorted=Object.entries(data).sort((a,b)=>b[1]-a[1]);
+  sorted.forEach(([k,v])=>{
+    const r=t.insertRow();r.insertCell().textContent=k;r.insertCell().textContent=v;
+  });
+}
+function fillRecent(data){
+  const t=document.getElementById('recent');
+  while(t.rows.length>1)t.deleteRow(1);
+  data.slice(0,20).forEach(v=>{
+    const r=t.insertRow();
+    const d=new Date(v.timestamp);
+    r.insertCell().textContent=d.toLocaleString('es-MX',{hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit'});
+    r.insertCell().textContent=new URL(v.page).pathname||'/';
+    r.insertCell().textContent=v.ip;
+  });
+}
+loadStats();
+</script>
+</body>
+</html>
