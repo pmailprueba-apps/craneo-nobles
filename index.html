@@ -513,6 +513,53 @@
       }
     }
 
+    /* Stage Divider */
+    .stage-divider {
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+    }
+    .stage-divider .line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.2;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .stage-divider .label {
+      margin-top: 20px;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 300;
+      opacity: 0.6;
+    }
+    .stage-divider .num {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 64px;
+      color: var(--accent);
+      opacity: 0.08;
+      line-height: 1;
+      margin-top: -8px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+      margin-top: -32px;
+      pointer-events: none;
+    }
+    .stage-divider .name {
+      font-size: 13px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text);
+      font-weight: 300;
+      margin-top: 4px;
+      opacity: 0.4;
+    }
+
     /* Contact / CTA */
     .contact {
       padding: 120px 0;
@@ -697,6 +744,13 @@
     </div>
   </section>
 
+  <div class="stage-divider">
+    <div class="line"></div>
+    <div class="num">I</div>
+    <div class="label">Primera pieza</div>
+    <div class="name">Hera</div>
+  </div>
+
   <section class="gallery" id="gallery">
     <div class="container">
       <div class="gallery-header">
@@ -722,6 +776,13 @@
       </div>
     </div>
   </section>
+
+  <div class="stage-divider">
+    <div class="line"></div>
+    <div class="num">II</div>
+    <div class="label">Segunda pieza</div>
+    <div class="name">Alma de Plata</div>
+  </div>
 
   <section class="alma" id="alma-de-plata">
     <div class="container">
@@ -782,6 +843,13 @@
       </div>
     </div>
   </section>
+
+  <div class="stage-divider">
+    <div class="line"></div>
+    <div class="num">III</div>
+    <div class="label">Tercera pieza</div>
+    <div class="name">Espíritu Libre</div>
+  </div>
 
   <section class="alma" id="alma-libre" style="border-top:none;padding-top:60px">
     <div class="container">
