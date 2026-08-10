@@ -1,0 +1,84 @@
+<template>
+  <div data-composition-id="beat-4" data-width="1080" data-height="1920" class="hf-scene bg-[#0C0C0C] flex flex-col items-center justify-center h-full w-full overflow-hidden" id="beat4">
+    
+    <!-- Grid of 3 images sliding/fading in -->
+    <div class="w-[90%] h-[60%] flex gap-6 items-center justify-center z-0">
+      
+      <!-- Hera -->
+      <div id="card-hera" class="relative w-1/3 h-full rounded-lg overflow-hidden border border-[#1F1F1F] opacity-0" style="transformPerspective: 1200px;">
+        <img src="https://pmailprueba-apps.github.io/craneo-nobles/assets/gallery/IMG_1810.PNG" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] to-transparent opacity-80"></div>
+        <div class="absolute bottom-8 w-full text-center">
+          <p class="playfair text-4xl text-[#E8E6E3] font-bold">Hera</p>
+        </div>
+      </div>
+
+      <!-- Alma de Plata -->
+      <div id="card-alma" class="relative w-1/3 h-full rounded-lg overflow-hidden border border-[#1F1F1F] opacity-0" style="transformPerspective: 1200px;">
+        <img src="https://pmailprueba-apps.github.io/craneo-nobles/assets/gallery/alma-de-plata/alma-hero.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] to-transparent opacity-80"></div>
+        <div class="absolute bottom-8 w-full text-center">
+          <p class="playfair text-4xl text-[#C9A96E] font-bold">Alma de Plata</p>
+        </div>
+      </div>
+
+      <!-- Espíritu Libre -->
+      <div id="card-libre" class="relative w-1/3 h-full rounded-lg overflow-hidden border border-[#1F1F1F] opacity-0" style="transformPerspective: 1200px;">
+        <img src="https://pmailprueba-apps.github.io/craneo-nobles/assets/gallery/alma-libre/alma-libre-01.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] to-transparent opacity-80"></div>
+        <div class="absolute bottom-8 w-full text-center">
+          <p class="playfair text-4xl text-[#E8E6E3] font-bold">Espíritu Libre</p>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+  
+  <script>
+    const beatDuration = 5.3;
+    const tl = gsap.timeline();
+    tl.set("#beat4", { visibility: "visible", opacity: 1 }, 0);
+    window.__timelines = window.__timelines || {};
+    window.__timelines['beat-4'] = tl;
+
+    // Flash in from Beat 3
+    tl.set("#beat4", { opacity: 1 }, 0);
+
+    // Stagger Cards Entrance
+    // Timing relative to audio: 
+    // Hera: 0.05s
+    // Alma de Plata: 1.06s
+    // Espiritu Libre: 2.78s
+
+    // Hera
+    tl.fromTo("#card-hera", 
+      { opacity: 0, y: 100, rotationY: 15 },
+      { opacity: 1, y: 0, rotationY: 0, duration: 1.0, ease: "power3.out" },
+      0.05
+    );
+
+    // Alma de Plata
+    tl.fromTo("#card-alma", 
+      { opacity: 0, y: 100, scale: 0.9 },
+      { opacity: 1, y: 0, scale: 1.05, duration: 1.0, ease: "power3.out" },
+      1.06
+    );
+
+    // Espiritu Libre
+    tl.fromTo("#card-libre", 
+      { opacity: 0, y: 100, rotationY: -15 },
+      { opacity: 1, y: 0, rotationY: 0, duration: 1.0, ease: "power3.out" },
+      2.78
+    );
+
+    // Subtle Float on cards
+    tl.to("#card-hera", { y: -5, duration: 2, yoyo: true, repeat: -1, ease: "sine.inOut" }, 1.05);
+    tl.to("#card-alma", { y: -5, duration: 2.2, yoyo: true, repeat: -1, ease: "sine.inOut" }, 2.06);
+    tl.to("#card-libre", { y: -5, duration: 1.8, yoyo: true, repeat: -1, ease: "sine.inOut" }, 3.78);
+
+    // Fade to black
+    tl.to("#beat4", { opacity: 0, duration: 0.8, ease: "power1.inOut" }, beatDuration - 0.8);
+    tl.set("#beat4", { opacity: 0, visibility: "hidden" }, beatDuration);
+  </script>
+</template>

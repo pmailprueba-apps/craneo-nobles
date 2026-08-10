@@ -1,0 +1,59 @@
+<template>
+  <div data-composition-id="beat-5" data-width="1080" data-height="1920" class="hf-scene bg-[#0C0C0C] flex flex-col items-center justify-center h-full w-full overflow-hidden" id="beat5">
+    
+    <div class="relative w-full h-full flex flex-col items-center justify-center">
+      <!-- Glow -->
+      <div id="glow5" class="absolute w-[400px] h-[400px] rounded-full opacity-0 pointer-events-none" style="background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, rgba(12,12,12,0) 70%);"></div>
+
+      <!-- Main brand -->
+      <div id="brand5" class="playfair text-8xl text-[#E8E6E3] font-bold tracking-widest opacity-0 uppercase mb-8 z-10">
+        Cráneo Noble
+      </div>
+      
+      <!-- Subline -->
+      <div id="subline5" class="font-outfit font-light text-3xl text-[#8A8885] tracking-widest opacity-0 z-10">
+        Una declaración de trascendencia
+      </div>
+    </div>
+    
+  </div>
+  
+  <script>
+    const beatDuration = 4.7;
+    const tl = gsap.timeline();
+    tl.set("#beat5", { visibility: "visible", opacity: 1 }, 0);
+    window.__timelines = window.__timelines || {};
+    window.__timelines['beat-5'] = tl;
+
+    // Hard cut in
+    tl.set("#beat5", { opacity: 1 }, 0);
+
+    // Glow pulse
+    tl.fromTo("#glow5",
+      { scale: 0.5, opacity: 0 },
+      { scale: 1.5, opacity: 1, duration: 3.0, ease: "power2.out" },
+      0.5
+    );
+
+    // Brand Name fade in (Cráneo Noble starts at 0.05s)
+    tl.fromTo("#brand5",
+      { opacity: 0, y: 20, filter: "blur(10px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.5, ease: "power2.out" },
+      0.05
+    );
+
+    // Subline fade in (Una declaración starts at 1.88s)
+    tl.fromTo("#subline5",
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" },
+      1.88
+    );
+
+    // Subtle Float on text
+    tl.to("#brand5", { y: -5, duration: 3, yoyo: true, repeat: -1, ease: "sine.inOut" }, 1.55);
+
+    // Fade everything to black at the end
+    tl.to("#beat5", { opacity: 0, duration: 1.0, ease: "power1.inOut" }, beatDuration - 1.0);
+    tl.set("#beat5", { opacity: 0, visibility: "hidden" }, beatDuration);
+  </script>
+</template>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>Craneo Noble — Intro Tormenta Eléctrica</title>
+  <style>
+    @font-face {
+      font-family: 'Fraunces';
+      src: url('fonts/fraunces.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Instrument Sans';
+      src: url('fonts/instrument-sans.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      background: #0C0C0C;
+      color: #F2EBE0;
+      font-family: 'Instrument Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    #stage {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+
+    /* Fondo: glow base + niebla blanca */
+    #glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1400px;
+      height: 1400px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(201,169,110,0.20) 0%, rgba(201,169,110,0.06) 40%, rgba(12,12,12,0) 70%);
+      opacity: 0;
+    }
+
+    /* Niebla / humo blanco en capas */
+    .fog {
+      position: absolute;
+      width: 1600px;
+      height: 900px;
+      background: radial-gradient(ellipse at center,
+        rgba(230,235,245,0.42) 0%,
+        rgba(230,235,245,0.20) 45%,
+        rgba(230,235,245,0) 70%);
+      filter: blur(36px);
+      opacity: 0;
+    }
+    #fog-1 { top: 24%; left: -40%; }
+    #fog-2 { top: 48%; left: -30%; }
+    #fog-3 { top: 72%; left: -20%; }
+
+    #vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      background: radial-gradient(ellipse at center, rgba(12,12,12,0) 40%, rgba(12,12,12,0.85) 100%);
+      opacity: 0;
+    }
+
+    /* Rayos SVG */
+    #lightning {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      z-index: 4;
+    }
+    .bolt {
+      stroke: #eef4ff;
+      stroke-width: 16;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      filter: drop-shadow(0 0 30px rgba(200,215,255,1));
+      opacity: 0;
+    }
+    .bolt-core {
+      stroke: #ffffff;
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      opacity: 0;
+    }
+
+    /* Destello sutil (NO tapa la pantalla) */
+    #flash {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      background: radial-gradient(ellipse at center, rgba(210,220,250,0.5) 0%, rgba(210,220,250,0) 70%);
+      opacity: 0;
+      z-index: 5;
+    }
+
+    /* Logo container (encima de la tormenta) */
+    #logo-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 700px;
+      height: 875px;
+      transform: translate(-50%, -58%);
+      opacity: 0;
+      z-index: 8;
+    }
+    #logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Shimmer sweep sobre el logo */
+    #shimmer {
+      position: absolute;
+      top: -10%;
+      left: -120%;
+      width: 120%;
+      height: 120%;
+      background: linear-gradient(105deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 38%,
+        rgba(255,246,220,0.35) 50%,
+        rgba(255,255,255,0) 62%,
+        rgba(255,255,255,0) 100%);
+      transform: skewX(-12deg);
+      opacity: 0;
+      mix-blend-mode: screen;
+    }
+
+    /* Wordmark */
+    #wordmark {
+      position: absolute;
+      bottom: 300px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 118px;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: #F2EBE0;
+      opacity: 0;
+    }
+    #wordmark .accent { color: #C9A96E; }
+
+    #tagline {
+      position: absolute;
+      bottom: 210px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 400;
+      font-size: 34px;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      color: #8A8885;
+      opacity: 0;
+    }
+
+    #rule {
+      position: absolute;
+      bottom: 250px;
+      left: 50%;
+      width: 160px;
+      height: 3px;
+      background-color: #C9A96E;
+      transform: translateX(-50%) scaleX(0);
+      opacity: 0;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+</head>
+<body>
+  <div data-composition-id="root" data-width="1080" data-height="1920" data-duration="5.5" data-start="0">
+    <audio id="intro-audio" src="assets/intro.m4a" data-start="0" data-duration="5.5" data-volume="0.8" data-track-index="5"></audio>
+    <div id="stage">
+      <div id="glow" data-layout-allow-overflow></div>
+      <div id="fog-1" class="fog" data-layout-allow-overflow></div>
+      <div id="fog-2" class="fog" data-layout-allow-overflow></div>
+      <div id="fog-3" class="fog" data-layout-allow-overflow></div>
+      <div id="vignette" data-layout-allow-overflow></div>
+
+      <!-- Rayos -->
+      <svg id="lightning" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+        <path id="b1" class="bolt" d="M 250 0 L 380 380 L 300 430 L 470 780 L 390 840 L 560 1240 L 500 1300 L 640 1650" />
+        <path id="b1c" class="bolt-core" d="M 250 0 L 380 380 L 300 430 L 470 780 L 390 840 L 560 1240 L 500 1300 L 640 1650" />
+        <path id="b2" class="bolt" d="M 820 -40 L 700 300 L 780 350 L 640 700 L 720 760 L 600 1080" />
+        <path id="b2c" class="bolt-core" d="M 820 -40 L 700 300 L 780 350 L 640 700 L 720 760 L 600 1080" />
+        <path id="b3" class="bolt" d="M 540 120 L 470 420 L 520 460 L 430 760" />
+        <path id="b3c" class="bolt-core" d="M 540 120 L 470 420 L 520 460 L 430 760" />
+        <path id="b4" class="bolt" d="M 150 600 L 300 900 L 240 950 L 380 1240" />
+        <path id="b4c" class="bolt-core" d="M 150 600 L 300 900 L 240 950 L 380 1240" />
+      </svg>
+
+      <div id="flash"></div>
+
+      <div id="logo-wrap">
+        <img id="logo" src="assets/logo-correcto.svg" />
+        <div id="shimmer"></div>
+      </div>
+      <div id="wordmark">CRÁNEO <span class="accent">NOBLE</span></div>
+      <div id="rule"></div>
+      <div id="tagline">Arte · Raíz · Carácter · Trascendencia</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const END = 5.5;
+
+    // Fondo + niebla + viñeta
+    tl.fromTo("#glow", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1.05, duration: 2.2, ease: "sine.out" }, 0);
+    tl.fromTo("#vignette", { opacity: 0 }, { opacity: 1, duration: 1.8, ease: "power1.out" }, 0.2);
+    tl.fromTo("#fog-1", { opacity: 0, x: -180 }, { opacity: 1, x: 180, duration: 5.2, ease: "sine.inOut" }, 0.15);
+    tl.fromTo("#fog-2", { opacity: 0, x: -240 }, { opacity: 1, x: 240, duration: 5.4, ease: "sine.inOut" }, 0.3);
+    tl.fromTo("#fog-3", { opacity: 0, x: -280 }, { opacity: 1, x: 280, duration: 5.4, ease: "sine.inOut" }, 0.45);
+
+    // ---- RAYOS: destellos secuenciales sobre la niebla ----
+    // Rayo 1 (grande, izquierda): visible 0.45s
+    tl.to("#b1, #b1c", { opacity: 1, duration: 0.02, ease: "none" }, 0.5);
+    tl.to("#b1, #b1c", { opacity: 0, duration: 0.4, ease: "power1.out" }, 0.95);
+    tl.to("#flash", { opacity: 0.35, duration: 0.03, ease: "none" }, 0.5);
+    tl.to("#flash", { opacity: 0, duration: 0.5, ease: "power1.out" }, 0.53);
+
+    // Rayo 2 (derecha): visible 0.45s
+    tl.to("#b2, #b2c", { opacity: 1, duration: 0.02, ease: "none" }, 1.15);
+    tl.to("#b2, #b2c", { opacity: 0, duration: 0.4, ease: "power1.out" }, 1.6);
+    tl.to("#flash", { opacity: 0.3, duration: 0.03, ease: "none" }, 1.15);
+    tl.to("#flash", { opacity: 0, duration: 0.5, ease: "power1.out" }, 1.18);
+
+    // Rayo 3 (centro pequeño): visible 0.4s
+    tl.to("#b3, #b3c", { opacity: 1, duration: 0.02, ease: "none" }, 1.75);
+    tl.to("#b3, #b3c", { opacity: 0, duration: 0.35, ease: "power1.out" }, 2.15);
+    tl.to("#flash", { opacity: 0.25, duration: 0.03, ease: "none" }, 1.75);
+    tl.to("#flash", { opacity: 0, duration: 0.45, ease: "power1.out" }, 1.78);
+
+    // Rayo 4 (abajo izquierda): visible 0.45s
+    tl.to("#b4, #b4c", { opacity: 1, duration: 0.02, ease: "none" }, 2.3);
+    tl.to("#b4, #b4c", { opacity: 0, duration: 0.4, ease: "power1.out" }, 2.75);
+    tl.to("#flash", { opacity: 0.32, duration: 0.03, ease: "none" }, 2.3);
+    tl.to("#flash", { opacity: 0, duration: 0.5, ease: "power1.out" }, 2.33);
+
+    // ---- LOGO: aparece con shimmer tras la tormenta ----
+    tl.fromTo("#logo-wrap", { opacity: 0, scale: 0.82, yPercent: 6 }, { opacity: 1, scale: 1, yPercent: -8, duration: 1.5, ease: "power3.out" }, 2.6);
+    tl.fromTo("#shimmer", { xPercent: -60, opacity: 0 }, { xPercent: 130, opacity: 1, duration: 1.0, ease: "power2.inOut" }, 3.0);
+    tl.to("#shimmer", { opacity: 0, duration: 0.35, ease: "power1.out" }, 4.0);
+
+    // Wordmark
+    tl.fromTo("#wordmark", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 3.2);
+    tl.fromTo("#wordmark .accent", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 1.0, ease: "power3.out" }, 3.4);
+    tl.fromTo("#rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.7, ease: "power2.out" }, 3.8);
+    tl.fromTo("#tagline", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9, ease: "sine.out" }, 4.1);
+
+    // Fade out para enlazar con el reel
+    tl.to("#stage", { opacity: 0, duration: 0.5, ease: "power1.inOut" }, END - 0.5);
+
+    window.__timelines["root"] = tl;
+  </script>
+</body>
+</html>

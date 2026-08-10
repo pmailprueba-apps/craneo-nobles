@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>Hera — Cráneo Noble</title>
+  <style>
+    @font-face {
+      font-family: 'Fraunces';
+      src: url('fonts/fraunces.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Instrument Sans';
+      src: url('fonts/instrument-sans.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      background: #0C0C0C;
+      color: #E8E6E3;
+      font-family: 'Instrument Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    .scene {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    #s1 { z-index: 1; }
+    #s2 { z-index: 2; opacity: 0; }
+    #s3 { z-index: 3; opacity: 0; }
+    #s4 { z-index: 4; opacity: 0; }
+    #s5 { z-index: 5; opacity: 0; }
+
+    .bg-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    .bgimg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ghost-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 920px;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      filter: blur(2px);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      background: linear-gradient(to bottom,
+        rgba(12,12,12,0.15) 0%,
+        rgba(12,12,12,0.35) 35%,
+        rgba(12,12,12,0.92) 100%);
+      z-index: 2;
+    }
+    .content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 90px 130px 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+      z-index: 10;
+    }
+    .label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #C9A96E;
+      opacity: 0;
+    }
+    .title {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: 116px;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      color: #F2EBE0;
+      opacity: 0;
+    }
+    .title .line { display: block; }
+    .title .accent { color: #C9A96E; }
+    .sub {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: #D9CFC0;
+      max-width: 900px;
+      opacity: 0;
+    }
+    .rule {
+      width: 130px;
+      height: 4px;
+      background-color: #C9A96E;
+      transform-origin: left center;
+      opacity: 0;
+    }
+    .specs {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      opacity: 0;
+    }
+    .spec-row {
+      display: flex;
+      align-items: baseline;
+      gap: 34px;
+      border-bottom: 2px solid rgba(201,169,110,0.28);
+      padding-bottom: 18px;
+    }
+    .spec-label {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #C9A96E;
+      width: 250px;
+      flex-shrink: 0;
+    }
+    .spec-value {
+      font-family: 'Fraunces', serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: #F2EBE0;
+    }
+    .cta-wa {
+      font-family: 'Fraunces', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: #F2EBE0;
+      opacity: 0;
+    }
+    .cta-url {
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #8A8885;
+      opacity: 0;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+</head>
+<body>
+  <div data-composition-id="root" data-width="1080" data-height="1920" data-duration="26" data-start="0">
+    <audio id="ambient" src="assets/ambient.m4a" data-start="0" data-duration="26" data-volume="0.75" data-track-index="5"></audio>
+
+    <!-- ESCENA 1: HOOK -->
+    <div id="s1" class="scene">
+      <div class="bg-wrap"><img id="s1-bg" class="bgimg" src="assets/hera-luz.png" data-layout-allow-overflow /></div>
+      <img id="s1-logo" class="ghost-logo" src="assets/logo.svg" />
+      <div class="scrim"></div>
+      <div class="content">
+        <div id="s1-label" class="label">Primera pieza · Colección Cráneo Noble</div>
+        <div id="s1-title" class="title"><span class="line">EL TROFEO QUE</span><span class="line accent">IMPONE EN TU RANCHO</span></div>
+        <div id="s1-rule" class="rule"></div>
+        <div id="s1-sub" class="sub">Pieza única intervenida a mano por Patricia Torres. Un cráneo natural transformado en obra de arte.</div>
+      </div>
+    </div>
+
+    <!-- ESCENA 2: LA OBRA -->
+    <div id="s2" class="scene">
+      <div class="bg-wrap"><img id="s2-bg" class="bgimg" src="assets/hera-frontal.png" data-layout-allow-overflow /></div>
+      <div class="scrim"></div>
+      <div class="content">
+        <div id="s2-label" class="label">La Obra</div>
+        <div id="s2-title" class="title"><span class="line">HERA</span></div>
+        <div id="s2-rule" class="rule"></div>
+        <div id="s2-specs" class="specs">
+          <div class="spec-row"><div class="spec-label">Colección</div><div class="spec-value">Cráneo Noble</div></div>
+          <div class="spec-row"><div class="spec-label">Artista</div><div class="spec-value">Patricia Torres</div></div>
+          <div class="spec-row"><div class="spec-label">Edición</div><div class="spec-value">Única e irrepetible</div></div>
+          <div class="spec-row"><div class="spec-label">Técnica</div><div class="spec-value">Intervención artesanal</div></div>
+          <div class="spec-row"><div class="spec-label">Medidas</div><div class="spec-value">65 ancho × 65 fondo × 26 alto cm</div></div>
+          <div class="spec-row"><div class="spec-label">Disponibilidad</div><div class="spec-value">Solo una pieza</div></div>
+          <div class="spec-row"><div class="spec-label">Estado</div><div class="spec-value">Disponible</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESCENA 3: DETALLE -->
+    <div id="s3" class="scene">
+      <div class="bg-wrap"><img id="s3-bg" class="bgimg" src="assets/hera-rostro.png" data-layout-allow-overflow /></div>
+      <div class="scrim"></div>
+      <div class="content">
+        <div id="s3-label" class="label">La Obra</div>
+        <div id="s3-title" class="title"><span class="line">ALTA GAMA</span><span class="line accent">ARTESANAL</span></div>
+        <div id="s3-rule" class="rule"></div>
+        <div id="s3-sub" class="sub">Arte contemporáneo fusionado con tradición artesanal. Cada detalle trabajado meticulosamente a mano.</div>
+      </div>
+    </div>
+
+    <!-- ESCENA 4: ESENCIA -->
+    <div id="s4" class="scene">
+      <div class="bg-wrap"><img id="s4-bg" class="bgimg" src="assets/hera-21.png" data-layout-allow-overflow /></div>
+      <div class="scrim"></div>
+      <div class="content">
+        <div id="s4-label" class="label">La Colección</div>
+        <div id="s4-title" class="title"><span class="line accent">ORGULLO</span><span class="line">DEL NORTE</span></div>
+        <div id="s4-rule" class="rule"></div>
+        <div id="s4-sub" class="sub">Al ser un cráneo natural intervenido artísticamente, no existe ni existirá otro igual. Una declaración de carácter.</div>
+      </div>
+    </div>
+
+    <!-- ESCENA 5: CTA -->
+    <div id="s5" class="scene">
+      <div class="bg-wrap"><img id="s5-bg" class="bgimg" src="assets/hera-sinluz.png" data-layout-allow-overflow /></div>
+      <div class="scrim"></div>
+      <div class="content">
+        <div id="s5-label" class="label">Colección Cráneo Noble</div>
+        <div id="s5-title" class="title"><span class="line">ESCRÍBENOS</span><span class="line accent">LLÉVATELA</span></div>
+        <div id="s5-wa" class="cta-wa">+52 444 510 1553</div>
+        <div id="s5-rule" class="rule"></div>
+        <div id="s5-url" class="cta-url">pmailprueba-apps.github.io/craneo-nobles</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+
+    // ---- Constantes de tiempo ----
+    const T1 = 4.0, T2 = 9.0, T3 = 14.0, T4 = 19.0, END = 26.0;
+    const TR = 0.7; // duración de transición (blur crossfade)
+
+    // ---- ESCENA 1: entradas (hook) ----
+    tl.fromTo("#s1-bg", { scale: 1 }, { scale: 1.06, duration: 4.0, ease: "sine.inOut" }, 0);
+    tl.fromTo("#s1-logo", { opacity: 0, scale: 0.85 }, { opacity: 0.35, scale: 1.05, duration: 3.0, ease: "power1.out" }, 0.2);
+    tl.fromTo("#s1-label", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.25);
+    tl.fromTo("#s1-title", { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 1.1, ease: "expo.out" }, 0.45);
+    tl.fromTo("#s1-rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.7, ease: "power3.out" }, 1.3);
+    tl.fromTo("#s1-sub", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "sine.out" }, 1.6);
+
+    // ---- TRANSICIÓN 1 →2 (blur crossfade) ----
+    tl.to("#s1", { filter: "blur(22px)", scale: 1.05, opacity: 0, duration: TR, ease: "power1.in" }, T1 - TR);
+    tl.set("#s1", { visibility: "hidden" }, T1);
+    tl.fromTo("#s2", { filter: "blur(22px)", scale: 0.95, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: TR, ease: "power1.out" }, T1 - 0.1);
+    tl.fromTo("#s2-bg", { scale: 1.06 }, { scale: 1, duration: 5.0, ease: "sine.inOut" }, T1);
+
+    // ---- ESCENA 2: entradas ----
+    tl.fromTo("#s2-label", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.6, ease: "expo.out" }, T1 + 0.2);
+    tl.fromTo("#s2-title", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.9, ease: "power4.out" }, T1 + 0.4);
+    tl.fromTo("#s2-rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.6, ease: "power2.out" }, T1 + 1.0);
+    tl.fromTo("#s2-specs", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.0, ease: "sine.out" }, T1 + 1.2);
+
+    // ---- TRANSICIÓN 2 →3 ----
+    tl.to("#s2", { filter: "blur(22px)", scale: 1.05, opacity: 0, duration: TR, ease: "power1.in" }, T2 - TR);
+    tl.set("#s2", { visibility: "hidden" }, T2);
+    tl.fromTo("#s3", { filter: "blur(22px)", scale: 0.95, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: TR, ease: "power1.out" }, T2 - 0.1);
+    tl.fromTo("#s3-bg", { scale: 1 }, { scale: 1.07, duration: 5.0, ease: "sine.inOut" }, T2);
+
+    // ---- ESCENA 3: entradas ----
+    tl.fromTo("#s3-label", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, T2 + 0.2);
+    tl.fromTo("#s3-title", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.9, ease: "expo.out" }, T2 + 0.4);
+    tl.fromTo("#s3-rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.6, ease: "sine.out" }, T2 + 1.1);
+    tl.fromTo("#s3-sub", { opacity: 0, y: 45 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, T2 + 1.3);
+
+    // ---- TRANSICIÓN 3 →4 ----
+    tl.to("#s3", { filter: "blur(22px)", scale: 1.05, opacity: 0, duration: TR, ease: "power1.in" }, T3 - TR);
+    tl.set("#s3", { visibility: "hidden" }, T3);
+    tl.fromTo("#s4", { filter: "blur(22px)", scale: 0.95, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: TR, ease: "power1.out" }, T3 - 0.1);
+    tl.fromTo("#s4-bg", { scale: 1.05 }, { scale: 1, duration: 5.0, ease: "sine.inOut" }, T3);
+
+    // ---- ESCENA 4: entradas ----
+    tl.fromTo("#s4-label", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, T3 + 0.2);
+    tl.fromTo("#s4-title", { opacity: 0, y: 65 }, { opacity: 1, y: 0, duration: 1.0, ease: "expo.out" }, T3 + 0.4);
+    tl.fromTo("#s4-rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.6, ease: "sine.out" }, T3 + 1.2);
+    tl.fromTo("#s4-sub", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "sine.out" }, T3 + 1.4);
+
+    // ---- TRANSICIÓN 4 →5 ----
+    tl.to("#s4", { filter: "blur(22px)", scale: 1.05, opacity: 0, duration: TR, ease: "power1.in" }, T4 - TR);
+    tl.set("#s4", { visibility: "hidden" }, T4);
+    tl.fromTo("#s5", { filter: "blur(22px)", scale: 0.95, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: TR, ease: "power1.out" }, T4 - 0.1);
+    tl.fromTo("#s5-bg", { scale: 1 }, { scale: 1.08, duration: 7.0, ease: "sine.inOut" }, T4);
+
+    // ---- ESCENA 5: entradas (CTA) ----
+    tl.fromTo("#s5-label", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, T4 + 0.2);
+    tl.fromTo("#s5-title", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 1.0, ease: "expo.out" }, T4 + 0.4);
+    tl.fromTo("#s5-wa", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "sine.out" }, T4 + 1.4);
+    tl.fromTo("#s5-rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.6, ease: "power3.out" }, T4 + 1.8);
+    tl.fromTo("#s5-url", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power1.out" }, T4 + 2.0);
+
+    // ---- FADE OUT FINAL (solo última escena) ----
+    tl.to("#s5", { opacity: 0, duration: 1.0, ease: "power1.inOut" }, END - 1.2);
+    tl.set("#s5", { visibility: "hidden" }, END);
+
+    window.__timelines["root"] = tl;
+  </script>
+</body>
+</html>

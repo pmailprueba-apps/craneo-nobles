@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>Craneo Noble — Outro Venta</title>
+  <style>
+    @font-face {
+      font-family: 'Fraunces';
+      src: url('fonts/fraunces.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Instrument Sans';
+      src: url('fonts/instrument-sans.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      background: #0C0C0C;
+      color: #F2EBE0;
+      font-family: 'Instrument Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    #stage {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+
+    #glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1200px;
+      height: 1200px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(201,169,110,0.16) 0%, rgba(201,169,110,0.05) 40%, rgba(12,12,12,0) 70%);
+      opacity: 0;
+    }
+
+    #logo-wrap {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      width: 330px;
+      height: 412px;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+    #logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    #wordmark {
+      position: absolute;
+      top: 48%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 76px;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: #F2EBE0;
+      opacity: 0;
+    }
+    #wordmark .accent { color: #C9A96E; }
+
+    /* COMPRA AHORA — CTA principal */
+    #buy-now {
+      position: absolute;
+      top: 53%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: 108px;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: #C9A96E;
+      text-shadow: 0 0 40px rgba(201,169,110,0.45);
+      opacity: 0;
+    }
+
+    #scarcity {
+      position: absolute;
+      top: 61.5%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #F2EBE0;
+      opacity: 0;
+    }
+
+    #rule {
+      position: absolute;
+      top: 64%;
+      left: 50%;
+      width: 220px;
+      height: 4px;
+      background-color: #C9A96E;
+      transform: translateX(-50%) scaleX(0);
+      opacity: 0;
+    }
+
+    #wa-label {
+      position: absolute;
+      top: 68%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #8A8885;
+      opacity: 0;
+    }
+
+    #wa {
+      position: absolute;
+      top: 73.5%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 88px;
+      letter-spacing: 0.02em;
+      color: #F2EBE0;
+      opacity: 0;
+    }
+
+    #url {
+      position: absolute;
+      top: 82%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 400;
+      font-size: 30px;
+      letter-spacing: 2px;
+      color: #8A8885;
+      opacity: 0;
+    }
+
+    /* Botón visual estilo WhatsApp */
+    #wa-btn {
+      position: absolute;
+      top: 77%;
+      left: 50%;
+      width: 560px;
+      height: 120px;
+      transform: translateX(-50%);
+      border: 3px solid rgba(201,169,110,0.6);
+      border-radius: 60px;
+      background: rgba(201,169,110,0.12);
+      opacity: 0;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+</head>
+<body>
+  <div data-composition-id="root" data-width="1080" data-height="1920" data-duration="5.5" data-start="0">
+    <audio id="outro-audio" src="assets/outro.m4a" data-start="0" data-duration="5.5" data-volume="0.8" data-track-index="5"></audio>
+    <div id="stage">
+      <div id="glow" data-layout-allow-overflow></div>
+      <div id="logo-wrap"><img id="logo" src="assets/logo.svg" /></div>
+      <div id="wordmark">CRÁNEO <span class="accent">NOBLE</span></div>
+      <div id="buy-now">COMPRA AHORA</div>
+      <div id="scarcity">Pieza única · Solo una disponible</div>
+      <div id="rule"></div>
+      <div id="wa-label">WhatsApp</div>
+      <div id="wa-btn"></div>
+      <div id="wa">+52 444 510 1553</div>
+      <div id="url">pmailprueba-apps.github.io/craneo-nobles</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const END = 5.5;
+
+    // Glow + logo + wordmark (entrada rápida)
+    tl.fromTo("#glow", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1.05, duration: 1.2, ease: "sine.out" }, 0.1);
+    tl.fromTo("#logo-wrap", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" }, 0.3);
+    tl.fromTo("#wordmark", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.9);
+
+    // COMPRA AHORA — impacto principal
+    tl.fromTo("#buy-now", { opacity: 0, scale: 0.7, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "expo.out" }, 1.4);
+
+    // Escasez + regla
+    tl.fromTo("#scarcity", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "sine.out" }, 2.1);
+    tl.fromTo("#rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.6, ease: "power2.out" }, 2.4);
+
+    // WhatsApp — el dato de contacto
+    tl.fromTo("#wa-label", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "sine.out" }, 2.7);
+    tl.fromTo("#wa-btn", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 3.0);
+    tl.fromTo("#wa", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 3.3);
+    tl.fromTo("#url", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "sine.out" }, 4.0);
+
+    // Fade a negro
+    tl.to("#stage", { opacity: 0, duration: 0.7, ease: "power1.inOut" }, END - 0.7);
+
+    window.__timelines["root"] = tl;
+  </script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espiritu Libre Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Base composition */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            width: 1080px;
+            height: 1920px;
+        }
+
+        /* Container for everything */
+        #composition {
+            position: relative;
+            width: 1080px;
+            height: 1920px;
+        }
+
+        /* Gallery Background Image */
+        #bg-gallery {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1080px;
+            height: 1920px;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.85); /* Slightly darker to let foreground pop */
+        }
+
+        /* Video Container - Full Bleed */
+        #video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1080px;
+            height: 1920px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        /* Videos inside container */
+        .clip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; /* GSAP will control this */
+            /* Rim light (white glow) + heavy drop shadow + brightness boost for separation */
+            filter: drop-shadow(0px 0px 12px rgba(255,255,255,0.25)) drop-shadow(0px 20px 40px rgba(0,0,0,0.9)) brightness(1.05) contrast(1.1) saturate(1.1);
+        }
+
+        /* Logos */
+        #logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            z-index: 20;
+            opacity: 0;
+        }
+
+        /* Typography / Captions */
+        #captions {
+            position: absolute;
+            bottom: 400px;
+            width: 100%;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 1.3;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 8px 24px rgba(0,0,0,1);
+            z-index: 30;
+            padding: 0 80px;
+            box-sizing: border-box;
+            color: #f6e6cd; /* subtle gold/bone */
+        }
+        
+        .phrase {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            opacity: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .word {
+            display: inline-block;
+            white-space: pre;
+            margin: 0 8px;
+            opacity: 0;
+        }
+        
+        #cta {
+            position: absolute;
+            bottom: 500px;
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: #ffffff;
+            z-index: 20;
+            opacity: 0;
+            text-transform: uppercase;
+        }
+        
+        /* Dark overlay for outro */
+        #fade-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1080px;
+            height: 1920px;
+            background: #050505;
+            z-index: 15;
+            opacity: 0;
+        }
+
+    </style>
+    <!-- Include GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div data-composition-id="root" data-width="1080" data-height="1920" data-start="0">
+        <!-- Audio Narration -->
+        <audio 
+            id="voiceover"
+            src="assets/voz_espiritu_libre.mp3" 
+            data-start="0" 
+            data-duration="27.5"
+            data-track-index="10">
+        </audio>
+
+        <!-- SFX: Ambient Drone -->
+        <audio 
+            id="sfx-drone"
+            src="assets/ambient_drone.mp3" 
+            data-start="0" 
+            data-duration="27.5"
+            data-track-index="11">
+        </audio>
+
+        <!-- SFX: Whoosh 1 -->
+        <audio 
+            id="sfx-whoosh1"
+            src="assets/deep_whoosh.mp3" 
+            data-start="6.5" 
+            data-duration="2.0"
+            data-track-index="12">
+        </audio>
+
+        <!-- SFX: Whoosh 2 -->
+        <audio 
+            id="sfx-whoosh2"
+            src="assets/deep_whoosh.mp3" 
+            data-start="11.5" 
+            data-duration="2.0"
+            data-track-index="13">
+        </audio>
+
+        <!-- Background -->
+        <img id="bg-gallery" src="assets/images/cinematic_bg.jpg" />
+
+        <!-- Logo -->
+        <img id="logo" src="assets/logo-craneo-noble-transparent.svg" />
+
+        <!-- Video Frame -->
+        <div id="video-container">
+            <!-- Scene 1: Macro -->
+            <video 
+                id="clip1"
+                class="clip"
+                src="assets/videos/IMG_2426_cutout.webm"
+                data-start="2.5" 
+                data-duration="5.5"
+                data-track-index="1"
+                muted playsinline>
+            </video>
+            
+            <!-- Scene 2: Pan -->
+            <video 
+                id="clip2"
+                class="clip"
+                src="assets/videos/IMG_2425_cutout.webm"
+                data-start="7.0" 
+                data-duration="6.0"
+                data-track-index="2"
+                muted playsinline>
+            </video>
+
+            <!-- Scene 3: Full -->
+            <video 
+                id="clip3"
+                class="clip"
+                src="assets/videos/IMG_2423_cutout.webm"
+                data-start="12.0" 
+                data-duration="10.2"
+                data-track-index="3"
+                muted playsinline>
+            </video>
+        </div>
+
+        <!-- Captions Area -->
+        <div id="captions"></div>
+        
+        <div id="fade-overlay"></div>
+        <div id="cta">Envíos a toda la República</div>
+    </div>
+
+    <script>
+        // Set Audio Volumes
+        document.getElementById('sfx-drone').volume = 0.3;
+        document.getElementById('sfx-whoosh1').volume = 1.0;
+        document.getElementById('sfx-whoosh2').volume = 1.0;
+
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true });
+        window.__timelines["root"] = tl;
+
+        // Intro Logo Animation (Cinematic Zoom out)
+        tl.fromTo("#logo", 
+            { autoAlpha: 0, scale: 1.2 }, 
+            { autoAlpha: 1, scale: 1.05, duration: 1.5, ease: "power2.out" }, 
+            0
+        );
+        tl.to("#logo", { scale: 1.0, duration: 1.0, ease: "linear" }, 1.5);
+        tl.to("#logo", { autoAlpha: 0, duration: 0.5, ease: "power2.inOut" }, 2.0);
+
+        // Clip 1 (2.5s to 8.0s) - fade in + zoom
+        tl.set("#clip1", { autoAlpha: 0 }, 0);
+        tl.fromTo("#clip1", 
+            { autoAlpha: 0, scale: 1.1 }, 
+            { autoAlpha: 1, scale: 1.05, duration: 1.5, ease: "power2.out" }, 
+            2.5
+        );
+        tl.to("#clip1", { scale: 1.0, duration: 4.0, ease: "linear" }, 4.0);
+        tl.set("#clip1", { autoAlpha: 0 }, 8.0); // Hard kill
+        
+        // Clip 2 (7.0s to 13.0s) - crossfade + zoom + whoosh sync
+        tl.set("#clip2", { autoAlpha: 0 }, 0);
+        tl.fromTo("#clip2", 
+            { autoAlpha: 0, scale: 1.1 }, 
+            { autoAlpha: 1, scale: 1.05, duration: 1.2, ease: "power2.out" }, 
+            7.0
+        );
+        tl.to("#clip2", { scale: 1.0, duration: 4.8, ease: "linear" }, 8.2);
+        tl.set("#clip2", { autoAlpha: 0 }, 13.0); // Hard kill
+        
+        // Clip 3 (12.0s to 22.2s) - crossfade + zoom
+        tl.set("#clip3", { autoAlpha: 0 }, 0);
+        tl.fromTo("#clip3", 
+            { autoAlpha: 0, scale: 1.1 }, 
+            { autoAlpha: 1, scale: 1.05, duration: 1.2, ease: "power2.out" }, 
+            12.0
+        );
+        tl.to("#clip3", { scale: 1.0, duration: 9.0, ease: "linear" }, 13.2);
+        tl.set("#clip3", { autoAlpha: 0 }, 22.2); // Hard kill
+
+        // Fade to black around 21.5s
+        tl.to("#fade-overlay", { autoAlpha: 1, duration: 1.5, ease: "power2.inOut" }, 21.5);
+        
+        // Outro Logo & CTA (22.5s to end)
+        tl.set("#logo", { scale: 1.05 }, 22.4); // Reset logo
+        tl.to("#logo", { autoAlpha: 1, duration: 1.5, ease: "power2.inOut" }, 22.5);
+        tl.to("#cta", { autoAlpha: 1, duration: 1.5, ease: "power2.inOut" }, 23.5);
+        tl.to("#logo", { scale: 1.1, duration: 5, ease: "linear" }, 22.5);
+
+        // Simple Captions sync based on transcript.json
+        const captions = document.getElementById('captions');
+        
+        const phrases = [
+            { text: "Hay detalles que transforman", start: 0.2, end: 2.18 },
+            { text: "un espacio por completo.", start: 2.18, end: 4.12 },
+            { text: "Nuestra colección", start: 4.19, end: 5.35 },
+            { text: "ESPÍRITU LIBRE", start: 5.35, end: 6.53 },
+            { text: "no es sólo decoración,", start: 6.53, end: 8.0 },
+            { text: "es arte con carácter.", start: 8.0, end: 10.23 },
+            { text: "Cráneos reales", start: 10.42, end: 11.27 },
+            { text: "seleccionados cuidadosamente", start: 11.27, end: 13.32 },
+            { text: "e intervenidos a mano", start: 13.32, end: 15.16 },
+            { text: "con acabados premium.", start: 15.16, end: 17.04 },
+            { text: "Pensados para quienes buscan", start: 17.26, end: 19.09 },
+            { text: "exclusividad absoluta", start: 19.19, end: 20.84 },
+            { text: "en su espacio personal.", start: 20.84, end: 22.78 },
+            { text: "Cada pieza es única.", start: 23.0, end: 25.08 },
+            { text: "No hay dos iguales.", start: 25.08, end: 27.06 }
+        ];
+
+        // Generate DOM for phrases
+        phrases.forEach((phrase, phraseIdx) => {
+            const phraseEl = document.createElement('div');
+            phraseEl.className = 'phrase';
+            phraseEl.id = 'phrase-' + phraseIdx;
+            
+            // Handle newlines natively or just split by space
+            const words = phrase.text.split(' ');
+            words.forEach((word, wordIdx) => {
+                const wordEl = document.createElement('span');
+                wordEl.className = 'word';
+                wordEl.id = 'word-' + phraseIdx + '-' + wordIdx;
+                wordEl.innerText = word;
+                phraseEl.appendChild(wordEl);
+            });
+            captions.appendChild(phraseEl);
+
+            const duration = phrase.end - phrase.start;
+            const wordStagger = (duration * 0.5) / words.length;
+
+            // Initialize the whole phrase container to opacity 1 but hidden words
+            tl.set(phraseEl, { autoAlpha: 1 }, phrase.start);
+            
+            // Stagger words in
+            tl.fromTo(phraseEl.querySelectorAll('.word'), 
+                { autoAlpha: 0, y: 15 },
+                { autoAlpha: 1, y: 0, duration: 0.4, stagger: wordStagger, ease: "power2.out" },
+                phrase.start
+            );
+            
+            // Fade out the whole phrase
+            tl.to(phraseEl, { autoAlpha: 0, duration: 0.4 }, phrase.end - 0.4);
+            tl.set(phraseEl, { autoAlpha: 0 }, phrase.end);
+        });
+
+    </script>
+</body>
+</html>

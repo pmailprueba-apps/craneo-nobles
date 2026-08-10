@@ -1,0 +1,62 @@
+<template>
+  <div data-composition-id="beat-3" data-width="1080" data-height="1920" class="hf-scene bg-[#0C0C0C] flex flex-col items-center justify-center h-full w-full overflow-hidden" id="beat3">
+    
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full flex items-center justify-center">
+      <img id="img-alma" src="https://pmailprueba-apps.github.io/craneo-nobles/assets/gallery/alma-de-plata/alma-hero.jpg" class="w-[120%] h-[120%] object-cover opacity-60" style="object-position: center;" />
+    </div>
+    
+    <!-- Text -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+      <div id="text-artist" class="playfair italic text-8xl text-[#C9A96E] font-bold mb-12">Patricia Torres</div>
+      <div class="flex gap-8">
+        <div id="tag1" class="font-outfit font-light text-2xl text-[#E8E6E3] tracking-widest uppercase border border-[#1F1F1F] px-6 py-2 bg-[#0C0C0C]/50 backdrop-blur-md rounded-full">Únicas</div>
+        <div id="tag2" class="font-outfit font-light text-2xl text-[#E8E6E3] tracking-widest uppercase border border-[#1F1F1F] px-6 py-2 bg-[#0C0C0C]/50 backdrop-blur-md rounded-full">Irrepetibles</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const beatDuration = 10.7;
+    const tl = gsap.timeline();
+    tl.set("#beat3", { visibility: "visible", opacity: 1 }, 0);
+    window.__timelines = window.__timelines || {};
+    window.__timelines['beat-3'] = tl;
+
+    // Hard cut in
+    tl.set("#beat3", { opacity: 1 }, 0);
+
+    // Pan Ken Burns effect on the image
+    tl.fromTo("#img-alma", 
+      { x: -50, y: -20 },
+      { x: 50, y: 20, duration: beatDuration, ease: "none" },
+      0
+    );
+
+    // Fade in Artist Name (Patricia Torres starts at 1.75s)
+    tl.fromTo("#text-artist",
+      { opacity: 0, scale: 0.9, filter: "blur(10px)" },
+      { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.5, ease: "power2.out" },
+      1.75
+    );
+
+    // Staggered Tags
+    tl.fromTo("#tag1",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+      3.81
+    );
+    tl.fromTo("#tag2",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+      5.5
+    );
+
+    // Subtle float for the whole text group
+    tl.to("#text-artist", { y: -10, duration: 2, yoyo: true, repeat: -1, ease: "sine.inOut" }, 3.0);
+
+    // Flash out
+    tl.to("#beat3", { opacity: 0, filter: "brightness(2)", duration: 0.2, ease: "power1.in" }, beatDuration - 0.2);
+    tl.set("#beat3", { opacity: 0, visibility: "hidden" }, beatDuration);
+  </script>
+</template>

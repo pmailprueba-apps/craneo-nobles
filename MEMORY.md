@@ -10,6 +10,16 @@
 
 *Standing rules, constraints, and guidelines to always follow.*
 
+### Estrategia Operativa Cráneo Noble (Inyectado manualmente)
+
+1. Para Cráneo Noble, el sitio web gratuito actual es solo portafolio visual secundario. No pedir datos ni transacciones hasta tener dominio propio (.com/.mx).
+2. Para piezas de Cráneo Noble, mostrar SIEMPRE precios, medidas exactas, peso y tipo de empaque. Evitar forzar al cliente premium a ir a WhatsApp solo para pedir el precio.
+3. El canal principal para Cráneo Noble es Instagram (evitar FB Marketplace). Las fotos deben ser impecables en fondo negro de terciopelo, sin elementos del taller.
+4. La segmentación de Facebook Ads para Cráneo Noble es: NL, CHIH, COAH, SON, SIN, JAL (excluir SLP). Intereses: Rodeo, Charrería, Ganadería, cruzado con Diseño de Interiores o Decoración. Ubicaciones: Feeds, Reels, Stories.
+5. Para prospección de Cráneo Noble, contactar por DM de Instagram a diseñadores de interiores y arquitectos del norte de México ofreciendo 15% o 20% de comisión por incorporar piezas en sus proyectos.
+
+*Confidence: 1.0 | Status: active | Created: 2026-08-02T17:35:35*
+
 ### Sesion arrancada sin seguir protocolo. Correccion ...
 
 Sesion arrancada sin seguir protocolo. Correccion del usuario: 1) Leer MEMORY.md al inicio de cada sesion SIEMPRE 2) Usar MEMANTO (memanto recall/answer/remember) en cada turno para mantener contexto 3) NO inventar ni especular - basar toda afirmacion en fuentes verificables 4) Delegar a modelos locales primero (local_pensar, local_codigo, local_escribir, local_revisar) antes de usar cloud 5) Seguir reglas de pensamiento critico: disentir, senalar fallas, no asentir por cortesia 6) Sourcear local-ai-functions.sh al inicio de cada sesion + pre-flight check. Este es el protocolo OBLIGATORIO para toda interaccion.

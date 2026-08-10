@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>Craneo Noble — Intro Tormenta</title>
+  <style>
+    @font-face {
+      font-family: 'Fraunces';
+      src: url('fonts/fraunces.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Instrument Sans';
+      src: url('fonts/instrument-sans.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      background: #07070A;
+      color: #F2EBE0;
+      font-family: 'Instrument Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    #stage {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+
+    /* Fondo base oscuro con glow azul-tenue */
+    #base-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1600px;
+      height: 1600px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(70,90,160,0.18) 0%, rgba(30,40,80,0.08) 40%, rgba(7,7,10,0) 70%);
+      opacity: 0;
+    }
+
+    /* Niebla / humo blanco en capas */
+    .fog {
+      position: absolute;
+      width: 1600px;
+      height: 900px;
+      background: radial-gradient(ellipse at center,
+        rgba(220,225,235,0.14) 0%,
+        rgba(220,225,235,0.06) 45%,
+        rgba(220,225,235,0) 70%);
+      filter: blur(30px);
+      opacity: 0;
+    }
+    #fog-1 { top: 30%; left: -40%; }
+    #fog-2 { top: 55%; left: -30%; }
+    #fog-3 { top: 75%; left: -20%; }
+
+    /* Rayos SVG */
+    #lightning {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      opacity: 0;
+      z-index: 5;
+    }
+    .bolt {
+      stroke: #ffffff;
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      filter: drop-shadow(0 0 18px rgba(220,230,255,0.9));
+    }
+    .bolt-core {
+      stroke: #eef4ff;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      filter: drop-shadow(0 0 40px rgba(200,215,255,1));
+    }
+
+    /* Flash blanco de la tormenta */
+    #flash {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      background: rgba(235,240,255,0.85);
+      opacity: 0;
+      z-index: 6;
+      mix-blend-mode: screen;
+    }
+
+    /* Logo */
+    #logo-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 620px;
+      height: 775px;
+      transform: translate(-50%, -55%);
+      opacity: 0;
+      z-index: 8;
+    }
+    #logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    #wordmark {
+      position: absolute;
+      bottom: 270px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 110px;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: #F2EBE0;
+      opacity: 0;
+      z-index: 8;
+    }
+    #wordmark .accent { color: #C9A96E; }
+
+    #tagline {
+      position: absolute;
+      bottom: 185px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 400;
+      font-size: 32px;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      color: #8A8885;
+      opacity: 0;
+      z-index: 8;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+</head>
+<body>
+  <div data-composition-id="root" data-width="1080" data-height="1920" data-duration="7.0" data-start="0">
+    <audio id="audio" src="assets/tormenta.m4a" data-start="0" data-duration="6.5" data-volume="0.85" data-track-index="5"></audio>
+    <div id="stage">
+      <div id="base-glow" data-layout-allow-overflow></div>
+      <div id="fog-1" class="fog" data-layout-allow-overflow></div>
+      <div id="fog-2" class="fog" data-layout-allow-overflow></div>
+      <div id="fog-3" class="fog" data-layout-allow-overflow></div>
+
+      <!-- Rayos -->
+      <svg id="lightning" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+        <path class="bolt" d="M 250 0 L 380 380 L 300 430 L 470 780 L 390 840 L 560 1240 L 500 1300 L 640 1650" />
+        <path class="bolt-core" d="M 250 0 L 380 380 L 300 430 L 470 780 L 390 840 L 560 1240 L 500 1300 L 640 1650" />
+        <path class="bolt" d="M 820 -40 L 700 300 L 780 350 L 640 700 L 720 760 L 600 1080" />
+        <path class="bolt-core" d="M 820 -40 L 700 300 L 780 350 L 640 700 L 720 760 L 600 1080" />
+        <path class="bolt" d="M 540 120 L 470 420 L 520 460 L 430 760" />
+        <path class="bolt-core" d="M 540 120 L 470 420 L 520 460 L 430 760" />
+        <path class="bolt" d="M 150 600 L 300 900 L 240 950 L 380 1240" />
+        <path class="bolt-core" d="M 150 600 L 300 900 L 240 950 L 380 1240" />
+      </svg>
+
+      <div id="flash"></div>
+
+      <div id="logo-wrap"><img id="logo" src="assets/logo.svg" /></div>
+      <div id="wordmark">CRÁNEO <span class="accent">NOBLE</span></div>
+      <div id="tagline">Arte · Raíz · Carácter · Trascendencia</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const END = 7.0;
+
+    // Fondo + niebla
+    tl.fromTo("#base-glow", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1.05, duration: 2.6, ease: "sine.out" }, 0);
+    tl.fromTo("#fog-1", { opacity: 0, x: -200 }, { opacity: 1, x: 200, duration: 6.5, ease: "sine.inOut" }, 0.2);
+    tl.fromTo("#fog-2", { opacity: 0, x: -260 }, { opacity: 1, x: 260, duration: 6.8, ease: "sine.inOut" }, 0.4);
+    tl.fromTo("#fog-3", { opacity: 0, x: -300 }, { opacity: 1, x: 300, duration: 6.8, ease: "sine.inOut" }, 0.6);
+
+    // ---- RAYOS: destellos secuenciales ----
+    // Rayo 1 (grande, izquierda)
+    tl.fromTo("#lightning .bolt:nth-of-type(1), #lightning .bolt-core:nth-of-type(1)",
+      { opacity: 0 }, { opacity: 1, duration: 0.04, ease: "none" }, 0.7);
+    tl.to("#lightning .bolt:nth-of-type(1), #lightning .bolt-core:nth-of-type(1)",
+      { opacity: 0, duration: 0.3, ease: "power1.out" }, 1.0);
+    tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.6, duration: 0.04, ease: "none" }, 0.72);
+    tl.to("#flash", { opacity: 0, duration: 0.45, ease: "power1.out" }, 0.76);
+
+    // Rayo 2 (derecha)
+    tl.fromTo("#lightning .bolt:nth-of-type(3), #lightning .bolt-core:nth-of-type(3)",
+      { opacity: 0 }, { opacity: 1, duration: 0.04, ease: "none" }, 1.3);
+    tl.to("#lightning .bolt:nth-of-type(3), #lightning .bolt-core:nth-of-type(3)",
+      { opacity: 0, duration: 0.3, ease: "power1.out" }, 1.6);
+    tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.5, duration: 0.04, ease: "none" }, 1.32);
+    tl.to("#flash", { opacity: 0, duration: 0.4, ease: "power1.out" }, 1.36);
+
+    // Rayo 3 (centro pequeño)
+    tl.fromTo("#lightning .bolt:nth-of-type(5), #lightning .bolt-core:nth-of-type(5)",
+      { opacity: 0 }, { opacity: 1, duration: 0.04, ease: "none" }, 1.9);
+    tl.to("#lightning .bolt:nth-of-type(5), #lightning .bolt-core:nth-of-type(5)",
+      { opacity: 0, duration: 0.25, ease: "power1.out" }, 2.15);
+    tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.4, duration: 0.04, ease: "none" }, 1.92);
+    tl.to("#flash", { opacity: 0, duration: 0.35, ease: "power1.out" }, 1.96);
+
+    // Rayo 4 (abajo izquierda)
+    tl.fromTo("#lightning .bolt:nth-of-type(7), #lightning .bolt-core:nth-of-type(7)",
+      { opacity: 0 }, { opacity: 1, duration: 0.04, ease: "none" }, 2.4);
+    tl.to("#lightning .bolt:nth-of-type(7), #lightning .bolt-core:nth-of-type(7)",
+      { opacity: 0, duration: 0.3, ease: "power1.out" }, 2.7);
+    tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.55, duration: 0.04, ease: "none" }, 2.42);
+    tl.to("#flash", { opacity: 0, duration: 0.4, ease: "power1.out" }, 2.46);
+
+    // Logo aparece en la calma
+    tl.fromTo("#logo-wrap", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 1.3, ease: "power3.out" }, 3.2);
+    tl.fromTo("#wordmark", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 3.8);
+    tl.fromTo("#wordmark .accent", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 1.0, ease: "power3.out" }, 4.0);
+    tl.fromTo("#tagline", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9, ease: "sine.out" }, 4.6);
+
+    // Fade out final
+    tl.to("#stage", { opacity: 0, duration: 0.6, ease: "power1.inOut" }, END - 0.6);
+
+    window.__timelines["root"] = tl;
+  </script>
+</body>
+</html>

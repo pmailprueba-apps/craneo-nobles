@@ -5,6 +5,8 @@ const path = require('path');
 const config = require('../.config.json');
 const PAGE_ID = config.PAGE_ID;
 const PAGE_TOKEN = process.env.PAGE_TOKEN || config.PAGE_TOKEN;
+const USER_TOKEN = process.env.USER_TOKEN || null;
+const FB_GROUPS = config.FB_GROUPS || [];
 
 function graphPost(endpoint, data, isMultipart = false) {
   return new Promise((resolve, reject) => {
@@ -55,26 +57,67 @@ async function postToFacebook(imagePath, message) {
   if (!fs.existsSync(fullPath)) { console.error(`Archivo no encontrado: ${fullPath}`); process.exit(1); }
   const multipart = makeMultipart({ message, access_token: PAGE_TOKEN }, fullPath);
   const result = await graphPost(`/${PAGE_ID}/photos`, multipart, true);
-  if (result.error) { console.error('Error:', result.error.message); process.exit(1); }
-  console.log(`✅ Publicada! ID: ${result.id}`);
+  if (result.error) { console.error('Error en página:', result.error.message); process.exit(1); }
+  console.log(`✅ Publicada en página! ID: ${result.id}`);
+  return result.id;
 }
 
 async function postText(message) {
   const result = await graphPost(`/${PAGE_ID}/feed`, { message, access_token: PAGE_TOKEN });
-  if (result.error) { console.error('Error:', result.error.message); process.exit(1); }
-  console.log(`✅ Publicado! ID: ${result.id}`);
+  if (result.error) { console.error('Error en página:', result.error.message); process.exit(1); }
+  console.log(`✅ Publicado en página! ID: ${result.id}`);
+  return result.id;
+}
+
+async function postToGroup(groupId, imagePath, message, token) {
+  const fullPath = path.resolve(imagePath);
+  const endpoint = imagePath ? `/${groupId}/photos` : `/${groupId}/feed`;
+  if (imagePath && fs.existsSync(fullPath)) {
+    const multipart = makeMultipart({ message, access_token: token }, fullPath);
+    const result = await graphPost(endpoint, multipart, true);
+    if (result.error) throw new Error(result.error.message);
+    return result.id;
+  } else {
+    const result = await graphPost(endpoint, { message, access_token: token });
+    if (result.error) throw new Error(result.error.message);
+    return result.id;
+  }
 }
 
 async function main() {
   const args = process.argv.slice(2);
   if (args.length === 0 || args[0] === '--help') {
-    console.log(`Uso: node scripts/post.js "mensaje" [imagen]`);
+    console.log(`Uso: node scripts/post.js "mensaje" [imagen] [--groups]`);
+    console.log(`  --groups    También publicar en los grupos configurados`);
     process.exit(0);
   }
   const message = args[0];
   const imagePath = args[1] && !args[1].startsWith('--') ? args[1] : null;
+  const postToGroups = args.includes('--groups');
+
   if (imagePath) await postToFacebook(imagePath, message);
   else await postText(message);
+
+  if (postToGroups) {
+    if (!USER_TOKEN) {
+      console.log('⚠️  No hay USER_TOKEN — no se puede publicar en grupos.');
+      console.log('   Configura USER_TOKEN en entorno o agrega userToken en .config.json');
+      process.exit(0);
+    }
+    if (FB_GROUPS.length === 0) {
+      console.log('⚠️  No hay grupos configurados en FB_GROUPS.');
+      process.exit(0);
+    }
+    for (const group of FB_GROUPS) {
+      const gid = typeof group === 'string' ? group : group.id;
+      try {
+        const id = await postToGroup(gid, imagePath, message, USER_TOKEN);
+        console.log(`✅ Publicado en grupo ${gid}! ID: ${id}`);
+      } catch (e) {
+        console.error(`❌ Error en grupo ${gid}: ${e.message}`);
+      }
+    }
+  }
 }
 
 main().catch(console.error);

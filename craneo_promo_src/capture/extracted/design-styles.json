@@ -1,0 +1,217 @@
+{
+  "typography": [
+    {
+      "role": "display",
+      "fontFamily": "Playfair Display",
+      "fontSize": "88px",
+      "fontWeight": "700",
+      "lineHeight": "83.6px",
+      "letterSpacing": "-1.76px",
+      "color": "#E8E6E3",
+      "sampleText": "Hera Arte · Raíz · Carácter · Trascendencia"
+    },
+    {
+      "role": "heading",
+      "fontFamily": "Playfair Display",
+      "fontSize": "60px",
+      "fontWeight": "700",
+      "lineHeight": "57px",
+      "letterSpacing": "normal",
+      "color": "#E8E6E3",
+      "sampleText": "Alma de Plata"
+    },
+    {
+      "role": "heading-2",
+      "fontFamily": "Playfair Display",
+      "fontSize": "56px",
+      "fontWeight": "700",
+      "lineHeight": "61.6px",
+      "letterSpacing": "normal",
+      "color": "#E8E6E3",
+      "sampleText": "Arte, Raíz, Carácter, Trascendencia"
+    },
+    {
+      "role": "heading-2",
+      "fontFamily": "Playfair Display",
+      "fontSize": "48px",
+      "fontWeight": "700",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "color": "#E8E6E3",
+      "sampleText": "Galería Hera"
+    },
+    {
+      "role": "body",
+      "fontFamily": "Outfit",
+      "fontSize": "15px",
+      "fontWeight": "300",
+      "lineHeight": "25.5px",
+      "letterSpacing": "normal",
+      "color": "#8A8885",
+      "sampleText": "Pieza única intervenida a mano por la artista y diseñadora P"
+    },
+    {
+      "role": "link",
+      "fontFamily": "Outfit",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "1.04px",
+      "color": "#FFFFFF",
+      "sampleText": "Galería"
+    },
+    {
+      "role": "heading-2",
+      "fontFamily": "Outfit",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "2.42px",
+      "color": "#C9A96E",
+      "sampleText": "La Obra"
+    },
+    {
+      "role": "label",
+      "fontFamily": "Outfit",
+      "fontSize": "11px",
+      "fontWeight": "300",
+      "lineHeight": "normal",
+      "letterSpacing": "1.32px",
+      "color": "#8A8885",
+      "sampleText": "Colección"
+    }
+  ],
+  "spacing": {
+    "observed": [
+      4,
+      8,
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      32,
+      40,
+      48,
+      64,
+      80,
+      120
+    ],
+    "baseUnit": 8
+  },
+  "radius": [],
+  "shadows": [],
+  "buttons": [
+    {
+      "label": "Adquirir\n        Conocer más",
+      "background": "transparent",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#E8E6E3",
+      "padding": "0px",
+      "borderRadius": "0px",
+      "border": "0px none rgb(232, 230, 227)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "46px"
+    },
+    {
+      "label": "Adquirir",
+      "background": "#C9A96E",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#0C0C0C",
+      "padding": "14px 32px",
+      "borderRadius": "0px",
+      "border": "0px none rgb(12, 12, 12)",
+      "boxShadow": "none",
+      "fontSize": "13px",
+      "fontWeight": "600",
+      "height": "46px"
+    },
+    {
+      "label": "Conocer más",
+      "background": "transparent",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#E8E6E3",
+      "padding": "14px 32px",
+      "borderRadius": "0px",
+      "border": "1px solid rgb(31, 31, 31)",
+      "boxShadow": "none",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "height": "46px"
+    },
+    {
+      "label": "Hera",
+      "background": "#25D366",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#000000",
+      "padding": "18px 48px",
+      "borderRadius": "0px",
+      "border": "0px none rgb(0, 0, 0)",
+      "boxShadow": "none",
+      "fontSize": "15px",
+      "fontWeight": "600",
+      "height": "57px"
+    }
+  ],
+  "cards": [
+    {
+      "label": "card",
+      "background": "#141414",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#E8E6E3",
+      "padding": "0px",
+      "borderRadius": "0px",
+      "border": "0px none rgb(232, 230, 227)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "880px"
+    },
+    {
+      "label": "card",
+      "background": "#141414",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#E8E6E3",
+      "padding": "32px",
+      "borderRadius": "0px",
+      "border": "1px solid rgb(31, 31, 31)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "385.766px"
+    }
+  ],
+  "nav": {
+    "label": "navigation",
+    "background": "transparent",
+    "backgroundImage": "",
+    "backdropFilter": "",
+    "color": "#E8E6E3",
+    "padding": "24px 32px",
+    "borderRadius": "0px",
+    "border": "0px none rgb(232, 230, 227)",
+    "boxShadow": "none",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "height": "64px"
+  },
+  "chips": [],
+  "statCells": [],
+  "tabs": [],
+  "backgrounds": [
+    {
+      "value": "linear-gradient(rgb(12, 12, 12) 0%, rgb(15, 15, 15) 50%, rgb(12, 12, 12) 100%)",
+      "area": 4064640
+    }
+  ],
+  "glass": []
+}

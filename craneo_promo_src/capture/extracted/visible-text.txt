@@ -1,0 +1,112 @@
+[a] Alma de Plata
+[a] Espíritu Libre
+[a] Próximamente
+[a] WhatsApp
+[div] Colección Cráneo Noble
+[h1] Hera
+[span] Arte · Raíz · Carácter · Trascendencia
+[p] Pieza única intervenida a mano por la artista y diseñadora Patricia Torres. 
+        Un cráneo natural transformado en obra de arte — irrepetible, como la huella que lo inspiró.
+[a] Adquirir
+[a] Conocer más
+[h2] La Obra
+[strong] Hera
+[p] es la primera pieza de la colección
+[strong] Cráneo Noble
+[p] , 
+            una línea de alta gama que fusiona el arte contemporáneo con la tradición artesanal. 
+            Cada detalle — la pedrería, las texturas, los metales — ha sido trabajado 
+            meticulosamente a mano por Patricia Torres.
+[p] Al ser un cráneo natural intervenido artísticamente,
+[strong] no existe ni existirá 
+            otro igual
+[p] . Es una pieza de colección, una declaración de carácter y trascendencia.
+[h2] Especificaciones
+[label] Colección
+[span] Cráneo Noble
+[label] Artista
+[span] Patricia Torres
+[label] Edición
+[span] Única e irrepetible
+[label] Técnica
+[span] Intervención artesanal
+[label] Disponibilidad
+[span] Solo una pieza
+[label] Estado
+[span] Disponible
+[h2] Arte, Raíz, Carácter, Trascendencia
+[div] Arte
+[div] Raíz
+[div] Carácter
+[div] Trascendencia
+[div] Primera pieza
+[div] Hera
+[h2] Galería Hera
+[p] Cada ángulo revela un detalle distinto. Hecha a mano, pieza única.
+[div] Segunda pieza
+[div] Alma de Plata
+[div] Segunda pieza — Colección Cráneo Noble
+[h2] Alma de Plata
+[div] Plata · Luz · Eterno · Reflejo
+[strong] Alma de Plata
+[p] es la segunda pieza de la colección, concebida bajo 
+            un mismo sello artesanal pero con personalidad propia. El cráneo se viste de 
+            plata, juega con la luz y proyecta un carácter distinto al de Hera — más 
+            contenido, más mineral, igual de eterno.
+[label] Colección
+[span] Cráneo Noble
+[label] Artista
+[span] Patricia Torres
+[label] Edición
+[span] Única e irrepetible
+[label] Estado
+[span] Disponible
+[a] Consultar
+[h2] Galería Alma de Plata
+[p] Plata, luz y textura — cada ángulo cuenta otra historia.
+[div] III
+[div] Tercera pieza
+[div] Espíritu Libre
+[div] Tercera pieza — Colección Cráneo Noble
+[h2] Espíritu Libre
+[div] FUERZA · ARTE · TRASCENDENCIA · ESENCIA
+[strong] Espíritu Libre
+[p] es una pieza escultórica única que redefine la naturaleza 
+            a través del arte contemporáneo y la artesanía de autor. Tomando como lienzo la imponente 
+            estructura de un cráneo real, esta obra equilibra la dualidad entre la crudeza orgánica 
+            y la sofisticación del diseño hecho a mano.
+[strong] Dualidad Estética:
+[p] Un hemisferio cubierto por una profunda pintura negra 
+            mate que resalta la sobriedad, mientras que el lado opuesto deslumbra con una intrincada 
+            textura plateada que emula la complejidad de una armadura mística.
+[strong] Detalles de Autor:
+[p] Enormes cuernos naturales que conservan su imponente 
+            carácter silvestre, enmarcados por brazaletes y trenzados de cuero oscuro minuciosamente 
+            colocados a mano.
+[strong] El Corazón de la Obra:
+[p] Un punto focal vibrante compuesto por incrustaciones 
+            de resina y gemas rojas que custodian un corazón central con una espiral plateada, 
+            simbolizando la vida, la pasión y el flujo eterno de la energía.
+[strong] Grabados de Alta Cuna:
+[p] En la base de la mandíbula, sutiles y elegantes 
+            filigranas plateadas añaden un toque clásico y refinado a una estructura puramente 
+            vanguardista.
+[a] Adquirir
+[h2] Galería Espíritu Libre
+[p] Cada ángulo revela un detalle distinto. Pieza única de colección.
+[h2] Próximamente
+[p] La colección Cráneo Noble sigue creciendo. Patricia trabaja en
+[strong] nuevas piezas
+[p] que exploran direcciones distintas, 
+          cada una única e irrepetible. Espíritu Libre ya está disponible en la galería.
+[div] Nueva pieza
+[div] Próximamente
+[div] Nueva pieza
+[div] Próximamente
+[h2] ¿Interesado?
+[p] Hera y Alma de Plata te esperan. Escríbenos a WhatsApp.
+[a] Hera
+[a] Alma de Plata
+[a] Espiritu Libre
+[span] © 2026 Cráneo Noble — Patricia Torres
+[a] Instagram

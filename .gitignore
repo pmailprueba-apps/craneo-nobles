@@ -3,3 +3,13 @@
 venv/
 __pycache__/
 .env
+.opencode/
+.specify/
+node_modules/
+
+# Raw render captures and caches (Gigabytes of uncompressed frames)
+**/work-*/
+**/captured-frames/
+*.rgb48le
+*.DNG
+*.dng

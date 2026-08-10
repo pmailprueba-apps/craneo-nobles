@@ -1,0 +1,62 @@
+<template>
+  <div data-composition-id="beat-1" data-width="1080" data-height="1920" class="hf-scene bg-[#0C0C0C] flex flex-col items-center justify-center h-full w-full" id="beat1">
+    <div class="relative w-full h-full flex flex-col items-center justify-center text-center">
+      
+      <!-- Blurred logo in background -->
+      <img id="bg-logo" src="https://pmailprueba-apps.github.io/craneo-nobles/assets/logo-craneo-noble-transparent.svg" class="absolute w-[90%] max-w-[900px] opacity-0 z-0 pointer-events-none" style="top: 50%; left: 50%; transform: translate(-50%, -50%); filter: blur(3px);" />
+
+      <!-- Words in foreground (z-10 to stay above logo) -->
+      <div id="word1" class="absolute playfair text-7xl text-[#E8E6E3] opacity-0 font-bold z-10" style="top: 35%;">Arte.</div>
+      <div id="word2" class="absolute playfair text-7xl text-[#E8E6E3] opacity-0 font-bold z-10" style="top: 45%;">Raíz.</div>
+      <div id="word3" class="absolute playfair text-7xl text-[#E8E6E3] opacity-0 font-bold z-10" style="top: 55%;">Carácter.</div>
+      <div id="word4" class="absolute playfair text-7xl text-[#C9A96E] opacity-0 font-bold z-10" style="top: 65%;">Trascendencia.</div>
+    </div>
+  </div>
+  
+  <script>
+    const beatEnd = 7.0;
+    const tl = gsap.timeline();
+    tl.set("#beat1", { visibility: "visible", opacity: 1 }, 0);
+    window.__timelines = window.__timelines || {};
+    window.__timelines['beat-1'] = tl;
+
+    // Background logo slow fade in
+    tl.fromTo("#bg-logo", 
+      { opacity: 0, scale: 0.8 },
+      { opacity: 0.5, scale: 1.1, duration: 6.0, ease: "power1.out" },
+      0
+    );
+
+    // Word 1: Arte (0.21s)
+    tl.fromTo("#word1", 
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 1.0, ease: "power2.out" },
+      0.21
+    );
+
+    // Word 2: Raíz (1.71s)
+    tl.fromTo("#word2", 
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 1.0, ease: "power2.out" },
+      1.71
+    );
+
+    // Word 3: Carácter (3.42s)
+    tl.fromTo("#word3", 
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 1.0, ease: "power2.out" },
+      3.42
+    );
+
+    // Word 4: Trascendencia (5.14s)
+    tl.fromTo("#word4", 
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 1.0, ease: "power2.out" },
+      5.14
+    );
+
+    // Fade out everything at the end of the beat
+    tl.to("#beat1", { opacity: 0, duration: 0.5, ease: "power1.inOut" }, 6.5);
+    tl.set("#beat1", { opacity: 0, visibility: "hidden" }, beatEnd);
+  </script>
+</template>

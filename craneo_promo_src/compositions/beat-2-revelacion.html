@@ -1,0 +1,56 @@
+<template>
+  <div data-composition-id="beat-2" data-width="1080" data-height="1920" class="hf-scene bg-[#0C0C0C] flex flex-col items-center justify-center h-full w-full overflow-hidden" id="beat2">
+    
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full flex items-center justify-center">
+      <img id="img-hera" src="https://pmailprueba-apps.github.io/craneo-nobles/assets/gallery/IMG_1810.PNG" class="w-full h-full object-cover opacity-60" style="object-position: center;" />
+    </div>
+
+    <!-- Radial Glow -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div id="glow2" class="w-[600px] h-[600px] rounded-full" style="background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, rgba(12,12,12,0) 70%);"></div>
+    </div>
+    
+    <!-- Text -->
+    <div class="absolute bottom-32 w-full text-center px-12 z-10">
+      <p id="text2" class="font-outfit font-light text-4xl text-[#E8E6E3] tracking-widest uppercase">
+        Obras de arte irrepetibles
+      </p>
+    </div>
+  </div>
+  
+  <script>
+    const beatDuration = 4.3;
+    const tl = gsap.timeline();
+    tl.set("#beat2", { visibility: "visible", opacity: 1 }, 0);
+    window.__timelines = window.__timelines || {};
+    window.__timelines['beat-2'] = tl;
+
+    // Hard cut in: we start at opacity 1 for the scene because beat 1 faded to black
+    tl.set("#beat2", { opacity: 1 }, 0);
+
+    // Ken Burns effect on the image
+    tl.fromTo("#img-hera", 
+      { scale: 1.0, filter: "brightness(0.6)" },
+      { scale: 1.05, filter: "brightness(0.8)", duration: beatDuration, ease: "none" },
+      0
+    );
+
+    // Glow pulse
+    tl.fromTo("#glow2",
+      { scale: 0.8, opacity: 0 },
+      { scale: 1.2, opacity: 1, duration: 2.0, ease: "power2.out" },
+      0.5
+    );
+
+    // Text slide up
+    tl.fromTo("#text2",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" },
+      1.0
+    );
+
+    // Hard cut out
+    tl.set("#beat2", { opacity: 0, visibility: "hidden" }, beatDuration);
+  </script>
+</template>
