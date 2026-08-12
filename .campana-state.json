@@ -1,10 +1,11 @@
 {
-  "currentDay": 5,
+  "currentDay": 6,
   "publishedDays": [
     1,
     2,
     3,
-    4
+    4,
+    5
   ],
   "startedAt": "2026-06-26T04:54:11.403Z",
   "pieza": "Hera",
